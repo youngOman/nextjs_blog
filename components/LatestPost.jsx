@@ -1,7 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import moment from 'moment';
 import Link from 'next/link';
-
 import { getRecentPosts,getSimilarPosts } from '../services';
 import { title } from 'process';
 
@@ -11,7 +10,7 @@ const LatestPost = ({categories,slug}) => {
   const [recentPost,setRecentPost] = useState([]);
 
   useEffect(()=>{
-    if(slug){  // 有slug代表現在是在特定文章裡面所以側欄顯示類似文章
+    if(slug){  // 有slug代表現在是在post_detail裡面所以側欄顯示類似文章
       getSimilarPosts(categories,slug)
         .then(response => (
           setRecentPost(response)

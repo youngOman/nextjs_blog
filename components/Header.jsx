@@ -33,9 +33,7 @@ const Header = () => {
                         </span>
                     </Link>
                 ))}
-
             </div>
-          
         </div>
     </div>
   )
