@@ -35,17 +35,17 @@ const PostDetails = ({post}) => {
 
 export default PostDetails 
 
-export async function getStaticProps({params}){
-  const data =  await getPostDetails(params.slug); 
+export async function getStaticProps({params}){ //params ??
+  const data =  await getPostDetails(params.slug);  // 單個post
   return {
-    props : { post : data }
+    props : { post : data } // post = 這頁的props
   }
 }
 
 export async function getStaticPaths(){ // 將所有可能的路徑都能被static render
-  const posts =  await getPosts(); // GraphQL API
+  const posts =  await getPosts(); // GraphQL API 全部的post
   return {
-    paths: posts.map(({node:{slug}})=>({params:{slug}})), // pre-render all the paths specified by getStaticPaths.
+    paths: posts.map(({node:{slug}})=>({params:{slug}})), // 讓Next.js知道所有可能出現的路徑
     fallback: false,
   }
 }

@@ -65,8 +65,7 @@ export const getPostDetails = async(slug) =>{
                     raw
                 }
             }
-        }
-        
+        }  
     `
     const result =  await request(graphqlAPI,query,{ slug })
     return result.post;
@@ -91,14 +90,14 @@ export const getRecentPosts = async() =>{
     const result = await request(graphqlAPI,query)
     return result.posts
 }
-// category List裡不能有null member List本身可以是null
-// slug_not 不要取得current slug ， 我們要的資料是除目前這篇以外的相同category的貼文
+// category !在[]裡的˙=List裡不能有null member List本身可以是null
+// slug_not 不要取得目前所在頁面的 slug 要取得目前除這篇以外的相同category的貼文
 // 進入特定文章的狀態 顯示類似貼文
-export const getSimilarPosts = async () => {
+export const getSimilarPosts = async (categories,slug) => {
     const query = gql`
-        query GetPostDetails($slug:String!,$category:[String!]){
+        query GetPostDetails($slug:String!,$categories:[String!]){
             posts(
-                where:{slug_not:$slug AND: {categories_some :{slug_in:$category}}}
+                where:{slug_not:$slug AND: {categories_some :{slug_in:$categories}}}
                 last: 3
             ){
                 title
@@ -111,9 +110,10 @@ export const getSimilarPosts = async () => {
 
         }
     `
-    const result = await request(graphqlAPI,query)
+    const result = await request(graphqlAPI,query,{categories,slug})
     return result.posts
 }
+
 export const getCategories = async() =>{
     const query = gql`
         query GetCategories {
