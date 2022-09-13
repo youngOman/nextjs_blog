@@ -5,12 +5,13 @@ import { getRecentPosts, getSimilarPosts } from "../services";
 
 // 在首頁的話這兩個props為undefined
 const LatestPost = ({ categories, slug }) => { // 從[slug].js傳進來的
+
   const [recentPost, setRecentPost] = useState([]);
 
   useEffect(() => {
     if (slug) {
       // 有slug代表現在是在post_detail裡面所以側欄顯示類似文章
-      getSimilarPosts(categories, slug) // 從GraphQL API 那要記得傳進來
+      getSimilarPosts(categories, slug) // GraphQL API 的function參數
         .then((response) => setRecentPost(response));
     } else {
       // 代表還在首頁，顯示最新文章
@@ -19,8 +20,9 @@ const LatestPost = ({ categories, slug }) => { // 從[slug].js傳進來的
       );
     }
   }, []);
-  console.log(slug);
-  // console.log(recentPost)
+
+  // console.log(slug);
+  // console.log(recentPost);
 
   return (
     <div className="bg-white shadow-lg rounded-lg p-8 mb-8">

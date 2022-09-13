@@ -3,7 +3,7 @@ import moment from 'moment'
 import Link from 'next/link'
 
 const PostCard = ({post}) => {
-  // console.log(post);
+  // console.log(post.id);
   return (
     <div className='bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8'>
       {/* thumbnail圖片 */}
@@ -16,7 +16,7 @@ const PostCard = ({post}) => {
       </div>
       {/* 標題 */}
       <h1 className='transition duration-500 text-center mb-8 cursor-pointer hover:text-red-600 text-3xl font-semibold'>
-        <Link href={`post/${post.slug}`} key={post.title}>
+        <Link href={`post/${post.slug}`}>
           {post.title}
         </Link>
       </h1>
@@ -43,10 +43,11 @@ const PostCard = ({post}) => {
       {/*摘要*/}
       <p className='text-center text-lg text-gray-700 font-normal px-4 lg:px:20 mb-8'>{post.excerpt}</p>
       <div className="text-center">
-        <Link href={`/post/${post.slug}`} key={post.title}>  
+        <Link href={`/post/${post.slug}`}>  
           <span className="transition duration-500 ease transform hover:-translate-y-5 inline-block bg-slate-700 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">Continue Reading</span>
         </Link>
       </div>
+      {post.categories.map((category)=>{  return ( <div className='text-lg font-normal' key={category.slug}> {category.name} </div> )})}
     </div>
   )
 }

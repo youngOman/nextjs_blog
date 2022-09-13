@@ -14,9 +14,9 @@ export default function Home ({posts}) {
       </Head>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className='lg:col-span-8 col-span-1'> 
-            {posts.map((post,index)=>(
-              <PostCard post={post.node} key={post.title} />
-            ))}
+            {posts.length >0 ? posts.map((post,index)=>(
+              <PostCard post={post.node} key={index} />
+            )):<div className='text-5xl'>0則貼文 QQ...</div>}
         </div>
         <div className='lg:col-span-4 col-span-1' >
           
@@ -33,8 +33,9 @@ export default function Home ({posts}) {
 
 export async function getStaticProps(){
 
-  const posts =  await ( getPosts() || ['0 Post= =']); // 若無資料就回傳空陣列
+  const posts =  await ( getPosts() || []); // 若無資料就回傳空陣列
   return {
     props : { posts }
   }
+  
 }
