@@ -4,14 +4,13 @@ import { useRouter } from 'next/router'
 import { getPostDetails,getPosts } from '../../services'
 import { PostDetail,PostCard,Categories,LatestPost,Author,Comments,CommentsForm } from '../../components'
 
-
 const PostDetails = ({post}) => {
 
   // console.log(post)
 
   const router = useRouter();
 
-  if (router.isFallback) {
+  if (router.isFallback) { // 載入中狀態
     return <Loader />;
   }
 

@@ -44,10 +44,21 @@ const PostCard = ({post}) => {
       <p className='text-center text-lg text-gray-700 font-normal px-4 lg:px:20 mb-8'>{post.excerpt}</p>
       <div className="text-center">
         <Link href={`/post/${post.slug}`}>  
-          <span className="transition duration-500 ease transform hover:-translate-y-5 inline-block bg-slate-700 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">Continue Reading</span>
+          <span className="transition duration-500 ease transform hover:-translate-y-5 inline-block bg-slate-700 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">繼續閱讀</span>
         </Link>
       </div>
-      {post.categories.map((category)=>{  return ( <div className='text-lg font-normal' key={category.slug}> {category.name} </div> )})}
+      {/*貼文上的分類標籤*/}
+      <div className='text-right mt-8'>
+        {post.categories.map((category,index)=>{ 
+          return ( 
+              <Link href={`/category/${category.slug}`} key={index} >  
+                <span className="hover:bg-sky-700 inline-block bg-slate-700 text-lg text-white font-serif rounded-full px-5 py-1 mx-1 cursor-pointer">
+                  {category.name}
+                </span>
+              </Link>
+          )
+        })}
+      </div>
     </div>
   )
 }
