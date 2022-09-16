@@ -1,6 +1,6 @@
 import React from 'react'
 import moment from 'moment'
-
+import { CodeBlock,dracula } from "react-code-blocks";
 
 const PostDetail = ({post}) => {
 
@@ -28,6 +28,15 @@ const PostDetail = ({post}) => {
         return <p key={index} className="mb-8">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>;
       case 'heading-four':
         return <h4 key={index} className="text-md font-semibold mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h4>;
+      case 'code-block':
+        return <div>
+        <CodeBlock
+          text={`x+y`}
+          language="javascript"
+          showLineNumbers={true}
+          theme={dracula}
+        />
+        </div>
       case 'image':
         return (
           <img
@@ -76,7 +85,7 @@ const PostDetail = ({post}) => {
         </div>
         <h1 className='mb-8 text-3xl font-semibold'>{post.title}</h1>
         {/*內文*/}
-        {/* {console.log(post.content.raw)} */}
+        {console.log(post.content.raw)}
         {post.content.raw.children.map((typeObj,index)=>{ //https://www.notion.so/Next-js-fdb2be60a14647079085d476d2e1fb7a
           // console.log("tpyeobj"+typeObj);
           const children = typeObj.children.map((item,itemIndex)=>{ 

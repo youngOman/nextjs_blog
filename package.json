@@ -13,6 +13,7 @@
     "next": "latest",
     "package.json": "^2.0.1",
     "react": "18.1.0",
+    "react-code-blocks": "^0.0.9-0",
     "react-dom": "18.1.0",
     "react-multi-carousel": "^2.8.2",
     "react-paginate": "^8.1.3",
