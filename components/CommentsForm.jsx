@@ -2,7 +2,9 @@ import React from 'react'
 
 const CommentsForm = () => {
   return (
-    <div>CommentsForm</div>
+    <div>
+      CommentsForm
+    </div>
   )
 }
 

@@ -28,20 +28,20 @@ const LatestPost = ({ categories, slug }) => { // 從[slug].js傳進來的
     <div className="bg-white shadow-lg rounded-lg p-8 mb-8">
       <h3 className="text-xl mb-8 font-semibold border-b border-violet-500 pb-4">
         {/* 若slug存在 顯示related post 否則 recent post*/}
-        {slug ? "你可能還會想看.." : "最近貼文"}
+        {slug ? "你可能還會想看.." : "最新貼文"}
       </h3>
       {recentPost.map((post) => (
-        <div key={post.title} className="flex items-center w-full mb-4">
+        <div key={post.title} className="flex items-center w-full mb-4 rounded-full transition duration-500 ease transform hover:-translate-x-5 hover:bg-blue-200">
           {/* 縮圖 */}
-          <div className="w-16 flex-none">
+          <div className="w-20 flex-none ">
+          <Link href={`/post/${post.slug}`} key={post.title}>
             <img
               key={post.id}
               alt={post.title}
               src={post.thumbnail.url}
-              height="60px"
-              width="60px"
-              className="align-middle rounded-full"
+              className="h-14 w-32 align-middle rounded-full cursor-pointer"
             />
+            </Link>
           </div>
           {/* 時間 */}
           <div className="flex-grow ml-4">

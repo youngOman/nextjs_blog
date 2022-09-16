@@ -17,6 +17,7 @@ body {
     //background: linear-gradient(to right bottom, #6d327c, #485DA6, #00a1ba, #01b18e, #32b37b);
     // background: #D3D3D3;
     background-image: url("../public/bg.jpg");
+    // opacity: 0.2;
     position: fixed;
     left: 0;
     top: 0;
@@ -61,4 +62,44 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+// 分頁
+.paginationContainer{
+  justify-content: center; // 在flex內水平至中
+  display: flex;
+  flex-direction: row; // column 則是垂直的
+  background-color:transparent;
+  // align-items:flex-start; // 四軸
+  margin-bottom: 20px auto;
+  padding: 10px;
+	box-shadow: 0 1px 2px 0 #222c32;
+	border-radius: 20px; // container圓角
+  font-weight: 900;
+  & li.previous a,li.next a
+  {
+    font-weight: 900;
+  }
+}
+
+.paginationContainer li a{
+  border-radius: 7px;
+  padding: 0.1rem 1rem;
+}
+.paginationContainer li a:hover{
+  background-color: rgba(4, 159, 255, 0.837);
+  padding: 0.1rem 1rem;
+  // border: rgb(1, 1, 1) 2px solid;
+}
+.paginationActive a {
+  background-color: #ffc800;
+  border-color: transparent; // 透明
+  color: rgb(0, 0, 0);
+  min-width: 32px;
+}
+.paginationDisabled {
+  // background-color: grey;
+  opacity: 0.0;
+  color: rgb(64, 98, 128);
+  cursor: no-drop;
 }
