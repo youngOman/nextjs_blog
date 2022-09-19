@@ -20,7 +20,7 @@ const Categories = () => {
         文章分類
       </h3>
       {categories.map((category,index)=>(
-        <Link href={`/category/${category.slug}`} key={index} >
+        <Link href={`/category/${category.slug}`} key={index} >{/* 沒有分類就不要有格線 */}
           <span className={`font-bold cursor-pointer block ${(index === categories.length - 1) ? 'border-b-0' : 'border-b'} p-3 mb-3
           transition duration-500 ease transform hover:-translate-x-5 hover:bg-sky-300
           `}>

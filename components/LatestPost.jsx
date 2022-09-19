@@ -31,7 +31,7 @@ const LatestPost = ({ categories, slug }) => { // 從[slug].js傳進來的
         {slug ? "你可能還會想看.." : "最新貼文"}
       </h3>
       {recentPost.map((post) => (
-        <div key={post.title} className="flex items-center w-full mb-4 rounded-full transition duration-500 ease transform hover:-translate-x-5 hover:bg-blue-200">
+        <div key={post.title} className="flex items-center w-full mb-4 rounded-full transition duration-500 ease transform hover:-translate-x-5 hover:bg-teal-400">
           {/* 縮圖 */}
           <div className="w-20 flex-none ">
           <Link href={`/post/${post.slug}`} key={post.title}>

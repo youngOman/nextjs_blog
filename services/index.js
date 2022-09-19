@@ -4,8 +4,8 @@ const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT; // endpoint .envæª
 
 export const getPosts = async() =>{
     const query = gql`
-        query MyQuery {
-            postsConnection {
+        query getPosts{
+            postsConnection(orderBy: publishedAt_DESC){
                 edges {
                     node{
                         author {
@@ -18,6 +18,7 @@ export const getPosts = async() =>{
                         }
                         id
                         createdAt
+
                         slug
                         title
                         excerpt

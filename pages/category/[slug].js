@@ -12,6 +12,7 @@ const CategoryRelatedPost = ({categoryPosts}) => {
     if(router.isFallback){
         return <Loading />
     }
+
     // 分頁功能
     const [pageNumber, setPageNumber] = useState(0); 
     const postsPerPage = 2;
@@ -38,7 +39,6 @@ const CategoryRelatedPost = ({categoryPosts}) => {
             </div>
             </div>
             <Pagination posts={categoryPosts} postsPerPage={postsPerPage} changePage={changePage} />
-
         </div>
     )
 }
