@@ -12,6 +12,9 @@ export { default as FeaturedPostCard } from './FeaturedPostCard';
 export { default as Pagination } from './Pagination';
 export { default as AdjacentPostCard } from './AdjacentPostCard';
 
+// export { default as Skillbar } from './intro/Skillbar';
+
+
 
 
 

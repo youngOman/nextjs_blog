@@ -13,7 +13,9 @@ const AdjacentPosts = ({ createdAt, slug }) => {
       setDataLoaded(true);
     });
   }, [slug]);
-//   console.log(adjacentPost)
+
+  // console.log(adjacentPost)
+  
   return (
     <div className="grid grid-cols-1 lg:grid-cols-8 gap-12 mb-8">
       {dataLoaded && (
