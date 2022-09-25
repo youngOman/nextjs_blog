@@ -20,7 +20,7 @@ import tailwind from './public/assets/skills/tailwind.png'
 import nextjs from './public/assets/skills/nextjs.png'
 {/*工具*/}
 import node from './public/assets/skills/node.png'
-import Git from './public/assets/skills/Git.png'
+import git from './public/assets/skills/git.png'
 import docker from './public/assets/skills/docker.png'
 {/*作業系統*/}
 import { FaLinux } from 'react-icons/fa';
