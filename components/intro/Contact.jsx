@@ -27,18 +27,18 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <h2 className='py-2'>Young Lo</h2>
-                <p>Full-Stack and System Dev</p>
+                <h2 className='py-4 text-3xl	'>Young Lo</h2>
+                <p className='font-bold'>A rookie in Full-Stack and System Dev</p>
                 <p className='py-4'>
-                  I am available for freelance or full-time positions. Contact
-                  me and let&apos;s talk.
+                 歡迎聊聊或一起技術交流，或是有啥好看的新番跟...也能推薦給我
+                 („ಡωಡ„)
                 </p>
               </div>
               <div>
-                <p className='uppercase pt-8'>Connect With Me</p>
+                <p className='uppercase pt-8'>Connect Info</p>
                 <div className='flex items-center justify-between py-4'>
                   <a
-                    href='https://www.linkedin.com/in/clint-briley-50056920a/'
+                    href='https://www.youtube.com/watch?v=1_-IMuD4mc0&t=443s&ab_channel=VillenTheDragon'
                     target='_blank'
                     rel='noreferrer'
                   >
@@ -47,7 +47,7 @@ const Contact = () => {
                     </div>
                   </a>
                   <a
-                    href='https://github.com/fireclint'
+                    href='#'
                     target='_blank'
                     rel='noreferrer'
                   >
@@ -77,7 +77,7 @@ const Contact = () => {
               <form
                 action='https://getform.io/f/35200ddb-16af-4955-af7b-435ce5afe0ce'
                 method='POST'
-                enctype='multipart/form-data'
+                encType='multipart/form-data'
               >
                 <div className='grid md:grid-cols-2 gap-4 w-full py-2 '>
                   <div className='flex flex-col'>
