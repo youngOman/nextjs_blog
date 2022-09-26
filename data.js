@@ -129,7 +129,7 @@ export const WebFrameWork = [
 
 export const Tools = [
     {
-        Image: Git,
+        Image: git,
         name: "Git",
         level: "90",
     },

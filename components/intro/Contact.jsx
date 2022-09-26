@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { AiOutlineMail } from 'react-icons/ai';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { AiOutlineMail,AiFillInstagram,AiOutlineTwitter } from 'react-icons/ai';
 import { HiOutlineChevronDoubleUp } from 'react-icons/hi';
 import ContactImg from '../../public/assets/contact.jpg'
 
@@ -42,30 +42,34 @@ const Contact = () => {
                     target='_blank'
                     rel='noreferrer'
                   >
-                    <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
-                      <FaLinkedinIn />
-                    </div>
+                  <div className='rounded-full shadow-lg bg-inherit bg-blue p-6 cursor-pointer hover:scale-110 ease-in duration-300 hover:bg-white'>
+                    <AiFillInstagram size={25}/>
+                  </div>
                   </a>
                   <a
-                    href='#'
+                    href='https://imgur.com/uCQkEXo'
                     target='_blank'
                     rel='noreferrer'
                   >
-                    <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
-                      <FaGithub />
+                    <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300 hover:bg-white'>
+                      <FaGithub size={25}/>
                     </div>
                   </a>
 
-                  <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
-                    <AiOutlineMail />
+                  <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300 hover:bg-white'>
+                    <AiOutlineMail size={25}  />
                   </div>
-                  <Link href='/resume'>
-                    <a>
-                      <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
-                        <BsFillPersonLinesFill />
-                      </div>
-                    </a>
-                  </Link>
+
+                    <a
+                      href='https://twitter.com/Lirseven/status/1573595349901783040/photo/1'
+                      target='_blank'
+                      rel='noreferrer'
+                    >
+                    <div className='rounded-full shadow-lg bg-inherit p-6 cursor-pointer hover:scale-110 ease-in duration-300 hover:bg-white'>
+                      <AiOutlineTwitter size={25}/>
+                    </div>
+                  </a>
+
                 </div>
               </div>
             </div>
@@ -121,7 +125,7 @@ const Contact = () => {
                     name='message'
                   ></textarea>
                 </div>
-                <button className='w-full rounded-full p-4 mt-4 bg-gradient-to-r from-cyan-500 to-blue-500 ease-in duration-200 hover:from-sky-300 hover:to-sky-800 hover:scale-105'>
+                <button className='w-full rounded-full p-4 mt-4 bg-gradient-to-r from-cyan-500 to-blue-500 ease-in duration-200 hover:from-sky-300 hover:to-slate-200 hover:scale-105'>
                   送出
                 </button>
               </form>

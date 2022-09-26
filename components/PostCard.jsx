@@ -15,7 +15,7 @@ const PostCard = ({post}) => {
         />
       </div>
       {/* 標題 */}
-      <h1 className='transition duration-500 text-center mb-8 cursor-pointer hover:text-red-600 text-3xl font-semibold'>
+      <h1 className='transition duration-500 text-center mb-8 cursor-pointer hover:text-gray-600 text-3xl font-semibold'>
         <Link href={`post/${post.slug}`}>
           {post.title}
         </Link>
@@ -44,7 +44,7 @@ const PostCard = ({post}) => {
       <p className='text-center text-lg text-gray-700 font-normal px-4 lg:px:20 mb-8'>{post.excerpt}</p>
       <div className="text-center">
         <Link href={`/post/${post.slug}`}>  
-          <span className="transition duration-500 ease transform hover:-translate-y-5 inline-block bg-slate-700 text-lg font-semibold rounded-full text-white px-8 py-3 cursor-pointer">看全文~</span>
+          <span className="transition duration-500 ease transform hover:-translate-y-5 hover:bg-zinc-500 inline-block bg-slate-700 text-lg font-semibold rounded-full text-white px-8 py-3 cursor-pointer">看全文~</span>
         </Link>
       </div>
       {/*貼文上的分類標籤*/}
@@ -52,7 +52,7 @@ const PostCard = ({post}) => {
         {post.categories.map((category,index)=>{ 
           return ( 
               <Link href={`/category/${category.slug}`} key={index} >  
-                <span className="relative hover:bg-sky-700 inline-block bg-slate-700 text-sm text-white font-semibold rounded-full px-5 py-1 mx-1 cursor-pointer">
+                <span className="relative hover:bg-sky-700 inline-block bg-slate-700 text-sm text-white font-semibold rounded-full px-5 py-2 mx-1 cursor-pointer">
                   {category.name}
                 </span>
               </Link>
