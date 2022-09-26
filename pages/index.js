@@ -16,7 +16,7 @@ export default function Home ({posts}) {
   }
   // 分頁功能
   const [pageNumber, setPageNumber] = useState(0); 
-  const postsPerPage = 2;
+  const postsPerPage = 5;
   const pagesVisited = pageNumber * postsPerPage; // 總筆數 = 目前所在頁數*每頁筆數
   // Ex:設每頁10筆 目前在第4頁 資料區間=40->50
   const currentPost = posts.slice(pagesVisited,pagesVisited+postsPerPage); // 目前這頁顯示的posts = .slice(總筆數,總筆數+每頁筆數)

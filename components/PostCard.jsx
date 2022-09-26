@@ -5,7 +5,7 @@ import Link from 'next/link'
 const PostCard = ({post}) => {
   // console.log(post.id);
   return (
-    <div className='bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-6 mb-8'>
+    <div className='bg-white/50 hover:bg-white ease duration-500 drop-shadow-2xl rounded-lg p-0 lg:p-8 pb-6 mb-8'>
       {/* thumbnail圖片 */}
       <div className='relative overflow-hidden shadow-md pb-80 mb-6'> 
         <img 
@@ -47,7 +47,7 @@ const PostCard = ({post}) => {
       <p className='text-center text-lg text-gray-700 font-normal px-4 lg:px:20 mb-8'>{post.excerpt}</p>
       <div className="text-center">
         <Link href={`/post/${post.slug}`}>  
-          <span className="transition duration-500 ease transform hover:-translate-y-3 hover:bg-zinc-500 inline-block bg-slate-700 text-lg font-semibold rounded-full text-white px-8 py-3 cursor-pointer">看全文~</span>
+          <span className="transition duration-500 ease transform hover:scale-110 hover:bg-zinc-500 inline-block bg-slate-700 text-lg font-semibold rounded-full text-white px-8 py-3 cursor-pointer">看全文~</span>
         </Link>
       </div>
       {/*貼文上的分類標籤*/}

@@ -76,7 +76,7 @@ a {
   // align-items:flex-start; // 四軸
   height: auto;
   margin-bottom: 20px auto;
-  padding: 10px;
+  padding: 15px;
 	box-shadow: 0 1px 2px 0 #222c32;
 	border-radius: 20px; // container圓角
   font-weight: 900;
@@ -88,13 +88,14 @@ a {
 
 .paginationContainer li a{
   // color: rgb(0, 0, 0);
-  font-size: larger;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: large;
   border-radius: 7px;
-  padding: 0.1rem 1rem;
+  padding: 0.6rem 1rem;
 }
 .paginationContainer li a:hover{
   background-color: rgba(4, 159, 255, 0.837);
-  padding: 0.1rem 1rem;
+  padding: 0.6rem 1rem;
   // border: rgb(1, 1, 1) 2px solid;
 }
 .paginationActive a {

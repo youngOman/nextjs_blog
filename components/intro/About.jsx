@@ -40,7 +40,7 @@ const About = () => {
           <p className='uppercase mb-8 text-5xl tracking-widest text-[#5651e5]'>
             About ME
           </p>
-          <h2 className='py-4'>我是誰</h2>
+          <h2 className='py-4 text-3xl'>I guess i'm an Otaku</h2>
           <p className='py-2'>
             我在各個領域都不算頂尖人才，只是個努力讓自己能稍微接近人才的微不足道的工程師
           </p>
