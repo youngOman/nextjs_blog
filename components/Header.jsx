@@ -35,17 +35,22 @@ const Header = () => {
                 <div className='px-10 font-semibold text-black ml-4 cursor-pointer align-middle'> 
                     <Link href="/intro/#home"> 
                         <span className='mt-2 text-black ml-6'>
-                            關於我
+                            自我介紹
                         </span>
                     </Link>
                     <Link href="/intro/#about"> 
                         <span className='mt-2 text-black ml-6'>
-                            我哪根蔥
+                            關於我
                         </span>
                     </Link>
                     <Link href="/intro/#Skill"> 
                         <span className='mt-2 text-black ml-6 '>
                             技能樹
+                        </span>
+                    </Link>
+                    <Link href="/intro/#projects"> 
+                        <span className='mt-2 text-black ml-6 '>
+                            專案
                         </span>
                     </Link>
                     <Link href="/intro/#contact"> 

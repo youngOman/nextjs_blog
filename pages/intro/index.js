@@ -18,10 +18,10 @@ const index = () => {
       {/* md:做這些設定直到大小低於md(768px) */}
       <aside className="hidden md:flex flex-col w-50 fixed right-0 rounded-lg top-40 h-auto p-5 bg-slate-400 cursor-pointer align-middle text-gray-900 text-lg font-bold transition duration-500 ease hover:-translate-x-5">
         <Link href="/intro/#home"> 
-          <span className='flex items-center p-2 dark:text-dark hover:bg-gray-100 border-b border-white'>關於我</span>
+          <span className='flex items-center p-2 dark:text-dark hover:bg-gray-100 border-b border-white'>自我介紹</span>
         </Link>
         <Link href="/intro/#about"> 
-          <span className='flex items-center p-2 dark:text-dark hover:bg-gray-100 border-b border-white'>我誰啊</span>
+          <span className='flex items-center p-2 dark:text-dark hover:bg-gray-100 border-b border-white'>關於我</span>
         </Link>
         <Link href="/intro/#Skill"> 
           <span className='flex items-center p-2 dark:text-dark hover:bg-gray-100 border-b border-white'>技能樹</span>
