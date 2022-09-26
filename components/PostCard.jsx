@@ -22,16 +22,19 @@ const PostCard = ({post}) => {
       </h1>
       {/*作者頭貼*/}
       <div className="block lg:flex text-center items-center justify-center mb-8 w-full">
-        <div className='flex items-center justify-center mb-4 lg:mb-0 w-full lg:w-auto mr-8'>
-          <img 
-            alt={post.author.name}
-            src={post.author.photo.url}
-            height='30px'
-            width='30px'
-            className='align-middle rounded-full'
-          />
-          <p className='inline align-middle text-gray-700 ml-2 font-medium text-lg'>{post.author.name}</p>
-        </div>
+        <Link href={`intro/`}> 
+          <div className='flex items-center justify-center mb-4 lg:mb-0 w-full lg:w-auto mr-8 cursor-pointer hover:scale-110 ease-in duration-300'>
+                <img 
+                  alt={post.author.name}
+                  src={post.author.photo.url}
+                  height='40px'
+                  width='40px'
+                  className='align-middle rounded-full'
+                />       
+                <p className='inline align-middle text-gray-700 ml-2 mt-1 font-medium text-lg'>{post.author.name}</p>
+
+          </div>
+        </Link>
         {/*時間*/}
         <div className="font-medium text-gray-700">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline mr-2 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -44,7 +47,7 @@ const PostCard = ({post}) => {
       <p className='text-center text-lg text-gray-700 font-normal px-4 lg:px:20 mb-8'>{post.excerpt}</p>
       <div className="text-center">
         <Link href={`/post/${post.slug}`}>  
-          <span className="transition duration-500 ease transform hover:-translate-y-5 hover:bg-zinc-500 inline-block bg-slate-700 text-lg font-semibold rounded-full text-white px-8 py-3 cursor-pointer">看全文~</span>
+          <span className="transition duration-500 ease transform hover:-translate-y-3 hover:bg-zinc-500 inline-block bg-slate-700 text-lg font-semibold rounded-full text-white px-8 py-3 cursor-pointer">看全文~</span>
         </Link>
       </div>
       {/*貼文上的分類標籤*/}
