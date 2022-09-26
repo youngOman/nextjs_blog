@@ -38,7 +38,7 @@ const Contact = () => {
                 <p className='uppercase pt-8'>Connect Info</p>
                 <div className='flex items-center justify-between py-4'>
                   <a
-                    href='https://www.youtube.com/watch?v=1_-IMuD4mc0&t=443s&ab_channel=VillenTheDragon'
+                    href='https://www.youtube.com/watch?v=6aI4l2oWEH8&ab_channel=BassPunch'
                     target='_blank'
                     rel='noreferrer'
                   >
@@ -47,7 +47,7 @@ const Contact = () => {
                   </div>
                   </a>
                   <a
-                    href='https://imgur.com/uCQkEXo'
+                    href='https://github.com/youngOman/ReactNextJSBlog'
                     target='_blank'
                     rel='noreferrer'
                   >
@@ -55,11 +55,15 @@ const Contact = () => {
                       <FaGithub size={25}/>
                     </div>
                   </a>
-
+                  <a
+                    href='https://imgur.com/uCQkEXo'
+                    target='_blank'
+                    rel='noreferrer'
+                  >
                   <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300 hover:bg-white'>
                     <AiOutlineMail size={25}  />
                   </div>
-
+                  </a>
                     <a
                       href='https://twitter.com/Lirseven/status/1573595349901783040/photo/1'
                       target='_blank'

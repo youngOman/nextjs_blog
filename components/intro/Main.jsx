@@ -31,7 +31,7 @@ const Main = () => {
               </div>
             </a>
             <a
-              href='https://www.youtube.com/watch?v=6aI4l2oWEH8&ab_channel=BassPunch'
+              href='https://github.com/youngOman/ReactNextJSBlog'
               target='_blank'
               rel='noreferrer'
             >
