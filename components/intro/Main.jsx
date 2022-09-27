@@ -6,7 +6,7 @@ import { FaGithub } from 'react-icons/fa';
 const Main = () => {
   return (
     <div id='home' className='w-full h-screen text-center'>
-      <div className='max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center font-bold text-xl'>
+      <div className='max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center font-serif text-xl'>
         <div>
           <p className='uppercase tracking-widest text-black text-3xl'>
             不是在挫折中，就是在遇到挫折的路上
@@ -26,7 +26,7 @@ const Main = () => {
               target='_blank'
               rel='noreferrer'
             >
-              <div className='rounded-full shadow-lg bg-inherit bg-blue p-6 cursor-pointer hover:scale-110 ease-in duration-300 hover:bg-white'>
+              <div className='rounded-full shadow-lg bg-inherit p-6 cursor-pointer hover:scale-110 ease-in duration-300 hover:bg-white'>
                 <AiFillInstagram size={25}/>
               </div>
             </a>
@@ -45,7 +45,7 @@ const Main = () => {
               </div>
             </Link>
             <a
-              href='https://twitter.com/Lirseven/status/1573595349901783040/photo/1'
+              href='https://twitter.com/khester824_/status/1572554606923902977/photo/1'
               target='_blank'
               rel='noreferrer'
             >

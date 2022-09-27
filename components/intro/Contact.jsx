@@ -12,7 +12,7 @@ const Contact = () => {
   return (
     <div id='contact' className='w-full lg:h-screen'>
       <div className='max-w-[1240px] m-auto px-2 py-16 w-full '>
-        <p className='flex mb-10 text-5xl tracking-widest uppercase font-mono text-[#633cbd]'>
+        <p className='flex mb-10 text-5xl tracking-widest uppercase font-serif font-bold text-[#633cbd]'>
           Contact
         </p>
         <div className='grid lg:grid-cols-5 gap-8'>
@@ -65,7 +65,7 @@ const Contact = () => {
                   </div>
                   </a>
                     <a
-                      href='https://twitter.com/Lirseven/status/1573595349901783040/photo/1'
+                      href='https://twitter.com/khester824_/status/1572554606923902977'
                       target='_blank'
                       rel='noreferrer'
                     >

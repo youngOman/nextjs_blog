@@ -9,7 +9,7 @@ const Skillbar = () => {
     // const barWidth = `${languages.level}%`;
 
     return (
-        <div id='Skill' className='w-full lg:h-50 p-2 '>
+        <div id='skills' className='w-full lg:h-50 p-2 '>
                 <div className='max-w-[1240px] mx-auto flex flex-col justify-center h-full'>
                     <p className='flex mb-10 text-5xl items-center justify-center tracking-widest uppercase font-mono text-[#633cbd]'>
                     Skills
