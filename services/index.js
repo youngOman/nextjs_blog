@@ -224,3 +224,11 @@ export const getAdjacentPosts = async (createdAt, slug) => {
   
     return { next: result.next[0], previous: result.previous[0] };
   };
+
+export const Searchquery = async (q) =>{
+
+    const query = gql`
+        query getSearchResults()
+    `
+
+}

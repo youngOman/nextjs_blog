@@ -110,7 +110,7 @@ export const WebFrameWork = [
     {
         Image : django,
         name: "Django",
-        level: "75",
+        level: "95",
     },
     {
         Image : laravel,

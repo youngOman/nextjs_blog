@@ -2,6 +2,7 @@ import React,{ useState,useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import NavLogo from '../public/assets/navlogo.png'
+import SearchBar from './SearchBar';
 import { AiOutlineMail,AiFillInstagram,AiOutlineTwitter,AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { FaGithub } from 'react-icons/fa';
 // import { getCategories } from '../services'
@@ -11,16 +12,17 @@ import { FaGithub } from 'react-icons/fa';
 const Header = () => {
 
     const [showNav,setShowNav] = useState(false);
+
     // const [categories,setCategories] = useState([])
     const changeNav = () => {
         setShowNav(!showNav);
       };
-    
+
     useEffect(()=>{
         // getCategories()
         // .then(response=> setCategories(response))
     },[]);
-
+    
     return (
         <div className='md:mx-auto px-10 mb-8 w-full shadow-xl items-center'>
             {/* Header LOGO */}
@@ -38,26 +40,28 @@ const Header = () => {
                         </a>
                     </Link>
                 </div>
-                {/* 分類列表 */}
-                <div className='px-10 font-semibold text-black ml-4 cursor-pointer align-middle '> 
-                <ul className='hidden md:flex'>
-                    <li className='ml-10 uppercase hover:border-b-4 ease-in duration-200 border-blue-800'>
-                        <Link href='/intro/#main'>自我介紹</Link>
-                    </li>
-                    <li className='ml-10 uppercase hover:border-b-4 ease-in duration-200 border-blue-800'>
-                        <Link href='/intro/#about'>關於我</Link>
-                    </li>
-                    <li className='ml-10 uppercase hover:border-b-4 ease-in duration-200 border-blue-800'>
-                        <Link href='/intro/#skills'>技能樹</Link>
-                    </li>
-                    <li className='ml-10 uppercase hover:border-b-4 ease-in duration-200 border-blue-800'>
-                        <Link href='/intro/#projects'>專案</Link>
-                    </li>
-                    <li className='ml-10 uppercase hover:border-b-4 ease-in duration-200 border-blue-800'>
-                        <Link href='/intro/#contact'>聯絡我</Link>
-                    </li>
-                </ul>
                 
+                {/* 搜尋 */}    
+                {/* <SearchBar/> */}
+                {/* 分類列表 */}    
+                <div className='px-10 font-semibold text-black ml-4 cursor-pointer align-middle '> 
+                    <ul className='hidden md:flex'>
+                        <li className='ml-10 uppercase hover:border-b-4 ease-in duration-200 border-blue-800'>
+                            <Link href='/intro/#main'>自我介紹</Link>
+                        </li>
+                        <li className='ml-10 uppercase hover:border-b-4 ease-in duration-200 border-blue-800'>
+                            <Link href='/intro/#about'>關於我</Link>
+                        </li>
+                        <li className='ml-10 uppercase hover:border-b-4 ease-in duration-200 border-blue-800'>
+                            <Link href='/intro/#skills'>技能樹</Link>
+                        </li>
+                        <li className='ml-10 uppercase hover:border-b-4 ease-in duration-200 border-blue-800'>
+                            <Link href='/intro/#projects'>專案</Link>
+                        </li>
+                        <li className='ml-10 uppercase hover:border-b-4 ease-in duration-200 border-blue-800'>
+                            <Link href='/intro/#contact'>聯絡我</Link>
+                        </li>
+                    </ul>
                     {/* {categories.map((category)=>(
                         <Link key={category.slug} href={`/category/${category.slug}`}>
                             <span className='md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer'>
@@ -68,7 +72,7 @@ const Header = () => {
                 </div>
                     {/* 手機板 Icon */}
                     <div onClick={changeNav} className='md:hidden'>
-                        <AiOutlineMenu />
+                        <AiOutlineMenu size={25}/>
                     </div>
                 </div>
             

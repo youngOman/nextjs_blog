@@ -14,7 +14,7 @@ const Main = () => {
           <h1 className='p-4 text-black'>
             Hi, 我叫 <span className='text-sky-500/100 text-3xl'> Young</span>
           </h1>
-          <h1 className='py-2 text-black'>是一個微不足道全端和系統維護工程師</h1>
+          <h1 className='py-2 text-black'>是個微不足道的全端及系統工程師</h1>
           <span className='p-4 text-black sm:max-w-[70%] m-auto' >
             學習的速度永遠跟不上資訊進步的速度，日復一日的鑽研新技術直到精通那刻又有新版本釋出...
           </span>
