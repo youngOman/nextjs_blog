@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { AiOutlineMail } from 'react-icons/ai';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { AiOutlineMail,AiFillInstagram,AiOutlineTwitter } from 'react-icons/ai';
 import { HiOutlineChevronDoubleUp } from 'react-icons/hi';
 import ContactImg from '../../public/assets/contact.jpg'
 
@@ -12,7 +12,7 @@ const Contact = () => {
   return (
     <div id='contact' className='w-full lg:h-screen'>
       <div className='max-w-[1240px] m-auto px-2 py-16 w-full '>
-        <p className='flex mb-10 text-5xl tracking-widest uppercase font-mono text-[#633cbd]'>
+        <p className='flex mb-10 text-5xl tracking-widest uppercase font-serif font-bold text-[#633cbd]'>
           Contact
         </p>
         <div className='grid lg:grid-cols-5 gap-8'>
@@ -38,34 +38,42 @@ const Contact = () => {
                 <p className='uppercase pt-8'>Connect Info</p>
                 <div className='flex items-center justify-between py-4'>
                   <a
-                    href='https://www.youtube.com/watch?v=1_-IMuD4mc0&t=443s&ab_channel=VillenTheDragon'
+                    href='https://www.youtube.com/watch?v=6aI4l2oWEH8&ab_channel=BassPunch'
                     target='_blank'
                     rel='noreferrer'
                   >
-                    <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
-                      <FaLinkedinIn />
+                  <div className='rounded-full shadow-lg bg-inherit bg-blue p-6 cursor-pointer hover:scale-110 ease-in duration-300 hover:bg-white'>
+                    <AiFillInstagram size={25}/>
+                  </div>
+                  </a>
+                  <a
+                    href='https://github.com/youngOman/ReactNextJSBlog'
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300 hover:bg-white'>
+                      <FaGithub size={25}/>
                     </div>
                   </a>
                   <a
-                    href='#'
+                    href='https://imgur.com/uCQkEXo'
                     target='_blank'
                     rel='noreferrer'
                   >
-                    <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
-                      <FaGithub />
+                  <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300 hover:bg-white'>
+                    <AiOutlineMail size={25}  />
+                  </div>
+                  </a>
+                    <a
+                      href='https://twitter.com/khester824_/status/1572554606923902977'
+                      target='_blank'
+                      rel='noreferrer'
+                    >
+                    <div className='rounded-full shadow-lg bg-inherit p-6 cursor-pointer hover:scale-110 ease-in duration-300 hover:bg-white'>
+                      <AiOutlineTwitter size={25}/>
                     </div>
                   </a>
 
-                  <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
-                    <AiOutlineMail />
-                  </div>
-                  <Link href='/resume'>
-                    <a>
-                      <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300'>
-                        <BsFillPersonLinesFill />
-                      </div>
-                    </a>
-                  </Link>
                 </div>
               </div>
             </div>
@@ -121,7 +129,7 @@ const Contact = () => {
                     name='message'
                   ></textarea>
                 </div>
-                <button className='w-full rounded-full p-4 mt-4 bg-gradient-to-r from-cyan-500 to-blue-500 ease-in duration-200 hover:from-sky-300 hover:to-sky-800 hover:scale-105'>
+                <button className='w-full rounded-full p-4 mt-4 bg-gradient-to-r from-cyan-500 to-blue-500 ease-in duration-200 hover:from-sky-300 hover:to-slate-200 hover:scale-105'>
                   送出
                 </button>
               </form>

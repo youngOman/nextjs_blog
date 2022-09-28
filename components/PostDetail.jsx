@@ -77,7 +77,8 @@ const PostDetail = ({post}) => {
             <span className="align-middle">{moment(post.createdAt).format('YYYY-MM-DD HH:mm')}</span>
           </div>
           {/*頭像*/}
-          <div className='flex mb-4 lg:mb-0 w-full lg:w-auto mr-4 mt-2'>
+        <Link href={`/intro/`}> 
+          <div className='flex mb-4 lg:mb-0 w-full lg:w-auto mr-4 mt-2 cursor-pointer hover:scale-110 ease-in duration-300'>
             <img 
               alt={post.author.name}
               src={post.author.photo.url}
@@ -87,7 +88,7 @@ const PostDetail = ({post}) => {
             />
             <p className='inline align-middle text-gray-700 ml-2 font-medium mt-1'>{post.author.name}</p>
           </div>
-
+        </Link>
         </div>
         <h1 className='mb-8 text-3xl font-semibold'>{post.title}</h1>
         {/*內文*/}

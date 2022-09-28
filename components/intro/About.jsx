@@ -5,7 +5,7 @@ import AboutImg from '../../public/assets/about.jpg'
 
 
 
-const ReadMore = ({children}) =>{
+const ReadMore = ({children,sliceNums,str}) =>{
 
   const text = children
 
@@ -17,53 +17,62 @@ const ReadMore = ({children}) =>{
 
   return (
     <p className='py-2'>
-        {readMore ? text.slice(0,34) : text}
+        {readMore ? text.slice(0,sliceNums) : text}
 
-        <span onClick={toggleReadMore} className='text-slate-600 cursor-pointer hover:underline'>
-          {readMore ? "(clickme)終於怎樣?!" : ' 顯示更少'}
+        <span onClick={toggleReadMore} className='text-slate-500 cursor-pointer hover:underline'>
+          {readMore ? str : ' 顯示更少'}
         </span>
 
     </p>
   );
 };
 
-// ReadMore.body = (props) => <p className='py-6'>{props.children}</p>
-
 const About = () => {
   // [...px] 可以是任意值 不用照tailwind的class 
 
 
   return (
-    <div id='about' className='w-full md:h-screen p-2 flex items-center py-16 font-sans font-bold text-xl'>
+    <div id='about' className='w-full md:h-screen p-2 flex items-center py-16 font-serif text-xl'>
       <div className='max-w-[1240px] m-auto md:grid grid-cols-3 gap-8'>
         <div className='col-span-2'>
-          <p className='uppercase mb-8 text-5xl tracking-widest text-[#5651e5]'>
+          <p className='uppercase mb-8 text-5xl font-bold tracking-widest text-[#5651e5]'>
             About ME
           </p>
-          <h2 className='py-4'>我是誰</h2>
+          <h2 className='py-4 text-3xl'>I Guess I'm An Otaku</h2>
           <p className='py-2'>
-            我在各個領域都不算頂尖人才，只是個想努力讓自己能稍微接近人才的微不足道的工程師
+            我在各個領域都不算頂尖人才，只是個為了能稍微接近人才而努力的小工程師
           </p>
-          <ReadMore>
-            在文藻渡過了五年，從懵懵懂懂到不斷地進步到畢業那刻我終於!!!...認知到我的軟體工程師之路勢必會走的比別人還要艱辛許多....
-
+          <ReadMore sliceNums={36} str="終於怎樣?!">
+            在文學院渡過了五年，從懵懵懂懂到不斷汲取知識直到畢業那刻終於!!!...認知到我的軟體工程師之路勢必會走的比別人還要艱辛許多....
+          </ReadMore>
+          <ReadMore sliceNums={78} str="又怎樣?#!@(">
+          一個從裡到外都是標準文科生的人跳到資訊領域，在之後要付出的代價絕對是我當時想像不到的，
+          當時大部份的人得知我以前是文科生都確切表現出對我的不安感，其實...現在對自己的懷疑跟否定絕對比別人多XD在這領域我的實力還太弱是個無可否認的事實
           </ReadMore>
           <p className='py-4'>
-            當時是個確確實實的文科生而跳到了資訊科，也能確切感受到老師對我是否能待的住的的不安感XD
-            從最一開始寫PHP時，對於"框架"實在沒什麼概念，就只是純真的把所有功能做出來而已
-            對於能憑著一己之力寫出高品質的程式碼有著特別的憧憬，常常看到許多大神在自己的頻道或是repo上不靠stackoverflow就
-            寫出很多很乾淨的程式碼
+          首次接觸程式是在五專四年級暑假，完全不知道自己再寫啥怪力亂神的亂碼，一開始也
+          對於"框架"沒什麼概念，就只是直觀的把功能全部混在一起寫，&emsp;<span className='text-gray-500  text-base'>(現在回頭看完全是地獄,根本就是無意間寫出的燒機測試軟體)</span>
           </p>
-          <Link href='/#projects'>
-            <p className='py-2 underline cursor-pointer'>
-             查看我的Projects
+          <p className='py-2'>
+            對於能憑一己之力能寫出"高品質&高效率&高彈性"的程式碼有非常大的憧憬，開始獨自從最後端的資料庫到後端邏輯到中繼層API到前端
+            乃至主機架設跟伺服器部署都做，<span className='text-2xl font-bold'>沒錯！我全都要！</span>，而每個部份要理解跟學"會"是真的需要犧牲非常大量的時間，
+            若要細講基本上能講的比星期六休閒公園的婆婆媽媽們還要久，後端可以參考看起來很嚇人其實不會的{` `}<Link href={`post/backendroadmap`}><span className='text-blue-700 font-bold cursor-pointer border-b-2 border-blue-600'>Backend Web Development Roadmap參考圖的貼文</span></Link>
+            &ensp;當然我絕對不敢說自己樣樣都精通，基本上我和大多數人一樣都是持續在學習中，後來也開始熟悉
+            <span className='font-serif	'>"Architecture Patterns","Design Patterns","Idioms"...等，偶爾也會刷leetcode，</span>
+            當初也自己跟自己在3台不同裝置版控XD<span className='text-gray-500 text-sm'>{`(`}還跟自己衝突很多次....{`)`}</span>，而最終目的都是為了習慣開發龐大專案的情境
+          </p>
+
+          <Link href='/intro#projects'>
+            <p className='mt-16 underline cursor-pointer'>
+            我的Projects
             </p>
           </Link>
-          <p className='py-2 underline cursor-pointer'>
-            <a href='https://twitter.com/siiteiebahiro' target='blank'>
-              作者:https://twitter.com/siiteiebahiro
+          <p className='py-6 underline cursor-pointer'>
+            <a href='https://twitter.com/siiteiebahiro' target='blank' className='py-2 underline cursor-pointer'>
+              作者推特:https://twitter.com/siiteiebahiro
             </a>
           </p>
+          
         </div>
         <div className='w-full h-auto m-auto shadow-xl shadow-gray-400 rounded-xl flex items-center justify-center p-4 hover:scale-105 ease-in duration-300'>
           <Image src={AboutImg} className='rounded-xl' alt='/' />

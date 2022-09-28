@@ -9,7 +9,7 @@ const Skillbar = () => {
     // const barWidth = `${languages.level}%`;
 
     return (
-        <div id='Skill' className='w-full lg:h-50 p-2 '>
+        <div id='skills' className='w-full lg:h-50 p-2 '>
                 <div className='max-w-[1240px] mx-auto flex flex-col justify-center h-full'>
                     <p className='flex mb-10 text-5xl items-center justify-center tracking-widest uppercase font-mono text-[#633cbd]'>
                     Skills
@@ -19,7 +19,7 @@ const Skillbar = () => {
                     <div className='mb-8'>
                     {languages.map((language, i) => {
                         return (
-                        <div className="my-2 text-white bg-gray-300 rounded-full" key={i}>
+                        <div className="my-2 text-white bg-gray-200 rounded-full" key={i}>
                             <div
                             className="flex items-center px-4 py-1 mt-2 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 hover:scale-105 transition duration-300 ease"
                             style={{width: `${language.level}%`,}}>  
@@ -42,7 +42,7 @@ const Skillbar = () => {
                     <div className='mb-8'>
                     {WebFrameWork.map((framework, i) => {
                         return (
-                        <div className="my-2 text-white bg-gray-300 rounded-full" key={i}>
+                        <div className="my-2 text-white bg-gray-200 rounded-full" key={i}>
                             <div
                             className="flex items-center px-4 py-1 mt-2 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 hover:scale-105 transition duration-300 ease"
                             style={{width: `${framework.level}%`,}}>  
@@ -58,11 +58,11 @@ const Skillbar = () => {
                     })}
                     </div>
                     
-                    <h5 className="my-3 text-2xl font-bold">Tools & Softwares</h5>
+                    <h5 className="my-3 text-2xl font-bold">Utilities</h5>
                     <div className='mb-8'>
                     {Tools.map((Tool, i) => {
                         return (
-                        <div className="my-2 text-white bg-gray-300 rounded-full" key={i}>
+                        <div className="my-2 text-white bg-gray-200 rounded-full" key={i}>
                             <div
                             className="flex items-center px-4 py-1 mt-2 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 hover:scale-105 transition duration-300 ease"
                             style={{width: `${Tool.level}%`,}}>
@@ -82,7 +82,7 @@ const Skillbar = () => {
                     <div className='mb-8'>
                     {OS.map((os, i) => {
                         return (
-                        <div className="my-2 text-white bg-gray-300 rounded-full" key={i}>
+                        <div className="my-2 text-white bg-gray-200 rounded-full" key={i}>
                             <div
                             className="flex items-center px-4 py-1 mt-2 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 hover:scale-105 transition duration-300 ease"
                             style={{width: `${os.level}%`,}}>

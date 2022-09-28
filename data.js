@@ -22,6 +22,8 @@ import nextjs from './public/assets/skills/nextjs.png'
 import node from './public/assets/skills/node.png'
 import git from './public/assets/skills/git.png'
 import docker from './public/assets/skills/docker.png'
+import vim from './public/assets/skills/vim.png'
+
 {/*作業系統*/}
 import { FaLinux } from 'react-icons/fa';
 import { BsWindows,BsApple } from 'react-icons/bs'
@@ -108,7 +110,7 @@ export const WebFrameWork = [
     {
         Image : django,
         name: "Django",
-        level: "75",
+        level: "95",
     },
     {
         Image : laravel,
@@ -129,9 +131,14 @@ export const WebFrameWork = [
 
 export const Tools = [
     {
-        Image: Git,
+        Image: git,
         name: "Git",
         level: "90",
+    },
+    {
+        Image: vim,
+        name: "Vim",
+        level: "85",
     },
     {
         Image: node,
@@ -161,6 +168,6 @@ export const OS = [
     {
         Icon: BsApple,
         name: "MacOS",
-        level: "40",
+        level: "60",
     },
 ];
