@@ -96,49 +96,49 @@ const Header = () => {
                         </div>
                         </div>
                         <div className='border-b border-gray-300 my-4'>
-                        <p className='w-[85%] md:w-[90%] py-4'>
-                            本來不打算做手機版RWD的...想想還是不如就一起放到教學吧( ͡o ͜ʖ ͡o)
+                        <p className='w-[85%] md:w-[90%] py-2'>
+                            本不打算做手機版RWD的...( ͡o ͜ʖ ͡o)
                         </p>
                         </div>
                     </div>
-                    <div className='py-4 flex flex-col'>
+                    <div className='flex flex-col'>
                         <ul className='uppercase '>
                             <Link href='/'>
-                                <li onClick={() => setShowNav(false)} className='py-4 text-lg border-b border-cyan-500 hover:bg-slate-300'>
+                                <li onClick={() => setShowNav(false)} className='py-3 border-b border-cyan-500 hover:bg-slate-300'>
                                 回到文章列表
                                 </li>
                             </Link>
                             <Link href='/intro/#main'>
-                                <li onClick={() => setShowNav(false)} className='py-4 text-lg border-b border-cyan-500 hover:bg-slate-300'>
+                                <li onClick={() => setShowNav(false)} className='py-3 border-b border-cyan-500 hover:bg-slate-300'>
                                 自我介紹
                                 </li>
                             </Link>
                             <Link href='/intro/#about'>
-                                <li onClick={() => setShowNav(false)} className='py-4 text-lg border-b border-cyan-500 hover:bg-slate-300'>
+                                <li onClick={() => setShowNav(false)} className='py-3 border-b border-cyan-500 hover:bg-slate-300'>
                                 關於我
                                 </li>
                             </Link>
                             <Link href='/intro/#skills'>
-                                <li onClick={() => setShowNav(false)} className='py-4 text-lg border-b border-cyan-500 hover:bg-slate-300'>
+                                <li onClick={() => setShowNav(false)} className='py-3 border-b border-cyan-500 hover:bg-slate-300'>
                                 技能樹
                                 </li>
                             </Link>
                             <Link href='/intro/#projects'>
-                                <li onClick={() => setShowNav(false)} className='py-4 text-lg border-b border-cyan-500 hover:bg-slate-300'>
+                                <li onClick={() => setShowNav(false)} className='py-3 border-b border-cyan-500 hover:bg-slate-300'>
                                 專案
                                 </li>
                             </Link>
                             <Link href='/intro/#contact'>
-                                <li onClick={() => setShowNav(false)} className='py-4 text-lg border-b border-cyan-500 hover:bg-slate-300'>
+                                <li onClick={() => setShowNav(false)} className='py-3 border-b border-cyan-500 hover:bg-slate-300'>
                                 聯絡我
                                 </li>
                             </Link>
                         </ul>
-                        <div className='pt-20'>
-                            <p className='uppercase tracking-widest text-[#283fed]'>
-                                我無聊的人生&Source Code連結
+                        <div className='pt-10'>
+                            <p className='sm:uppercase tracking-widest text-[#283fed]'>
+                                Social
                             </p>
-                            <div className='flex items-center justify-between  mt-2 w-full sm:w-[100%]'>
+                            <div className='flex items-center justify-between mt-2 w-full sm:w-[100%]'>
                                 <a  href='https://www.instagram.com/lo.young/' target='_blank' rel='noreferrer' >
                                 <div className='rounded-full shadow-lg shadow-gray-400 p-3 mx-1 cursor-pointer hover:scale-110 ease-in duration-300 hover:bg-slate-400'>
                                     <AiFillInstagram/>
@@ -162,7 +162,6 @@ const Header = () => {
                                     <AiOutlineTwitter/>
                                 </div>
                                 </a>
-
                             </div>
                         </div>
                     </div>
