@@ -56,7 +56,7 @@ const About = () => {
           <p className='py-2'>
             對於能憑一己之力能寫出"高品質&高效率&高彈性"的程式碼有非常大的憧憬，一開始先獨自從最深層資料庫到後端邏輯到中繼層API到前端
             乃至主機架設跟伺服器部署都自己來，<span className='text-2xl font-bold'>沒錯！我全都要！</span>，每個部份要理解跟學"會"是真的需要犧牲非常大量的時間，
-            若要細講肯定能講的比國中朝會報告還要久，其中後端就可以參考{` `}<Link href={`post/backendroadmap`}><span className='text-blue-700 font-bold cursor-pointer border-b-2 border-blue-600'>Backend Web Development Roadmap 參考圖</span></Link>
+            若要細講肯定能講的比國中朝會報告還要久，其中後端可以參考{` `}<Link href={`post/backendroadmap`}><span className='text-blue-700 font-bold cursor-pointer border-b-2 border-blue-600'>Backend Web Development Roadmap 參考圖</span></Link>
             &ensp;，當然我絕對不敢說自己樣樣都精通，和大多數人我也還在不斷學習中，也是到後來開始熟悉
             <span className='font-serif	'>"Architecture Patterns","Design Patterns","Idioms"...等，才逐漸建構出一個完整的概念</span>
             以前還自己跟自己在3台不同裝置版控XD<span className='text-gray-500 text-sm'>{`(`}還跟自己衝突很多次....{`)`}</span>，而最終目的都是為了習慣開發龐大專案的情境
