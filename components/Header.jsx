@@ -2,7 +2,6 @@ import React,{ useState,useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import NavLogo from '../public/assets/navlogo.png'
-import SearchBar from './SearchBar';
 import { AiOutlineMail,AiFillInstagram,AiOutlineTwitter,AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { FaGithub } from 'react-icons/fa';
 // import { getCategories } from '../services'
@@ -16,7 +15,7 @@ const Header = () => {
     // const [categories,setCategories] = useState([])
     const changeNav = () => {
         setShowNav(!showNav);
-      };
+    };
 
     useEffect(()=>{
         // getCategories()
@@ -25,8 +24,8 @@ const Header = () => {
     
     return (
         <div className='md:mx-auto px-10 mb-8 w-full shadow-xl items-center'>
-            {/* Header LOGO */}
             <div className='flex justify-between items-center 2xl:px-16 border-b-2 border-blue-400 py-8'>
+                {/* LOGO */}
                 <div className='md:float-left block '>
                     <Link href="/">
                         <a>
@@ -40,10 +39,7 @@ const Header = () => {
                         </a>
                     </Link>
                 </div>
-                
-                {/* 搜尋 */}    
-                {/* <SearchBar/> */}
-                {/* 分類列表 */}    
+                {/* Right col */}    
                 <div className='px-10 font-semibold text-black ml-4 cursor-pointer align-middle '> 
                     <ul className='hidden md:flex'>
                         <li className='ml-10 uppercase hover:border-b-4 ease-in duration-200 border-blue-800'>
@@ -70,7 +66,7 @@ const Header = () => {
                         </Link>
                     ))} */}
                 </div>
-                    {/* 手機板 Icon */}
+                    {/* Mobile Icon */}
                     <div onClick={changeNav} className='md:hidden'>
                         <AiOutlineMenu size={25}/>
                     </div>

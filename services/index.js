@@ -18,7 +18,7 @@ export const getPosts = async() =>{
                         }
                         id
                         createdAt
-
+                        featuredPost
                         slug
                         title
                         excerpt

@@ -1,9 +1,7 @@
 import React from 'react'
 import ReactPaginate from 'react-paginate';
 
-const Pagination = ({posts,postsPerPage,changePage}) => {
-
-    const pageCount = Math.ceil(posts.length / postsPerPage); // 總頁數
+const Pagination = ({pageCount,changePage}) => {
     
     return (
         <div>

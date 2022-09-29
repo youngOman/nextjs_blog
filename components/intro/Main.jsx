@@ -9,7 +9,7 @@ const Main = () => {
       <div className='max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center font-serif text-xl'>
         <div>
           <p className='uppercase tracking-widest text-black text-3xl'>
-            不是在挫折中，就是在遇到挫折的路上
+            做自己喜歡的事，不代表一直都能樂在其中
           </p>
           <h1 className='p-4 text-black'>
             Hi, 我叫 <span className='text-sky-500/100 text-3xl'> Young</span>
