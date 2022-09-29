@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@graphcms/rich-text-react-renderer": "^0.6.1",
     "flowbite": "^1.5.3",
     "flowbite-react": "^0.1.11",
     "graphql": "^16.6.0",
@@ -14,6 +15,7 @@
     "moment": "^2.29.4",
     "next": "latest",
     "package.json": "^2.0.1",
+    "prismjs": "^1.29.0",
     "react": "18.1.0",
     "react-code-blocks": "^0.0.9-0",
     "react-dom": "18.1.0",

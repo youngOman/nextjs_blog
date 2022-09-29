@@ -42,6 +42,9 @@ const Header = () => {
                 {/* Right col */}    
                 <div className='px-10 font-semibold text-black ml-4 cursor-pointer align-middle '> 
                     <ul className='hidden md:flex'>
+                        <li className='ml-10  uppercase hover:border-b-4 ease-in duration-200 border-blue-800'>
+                            <Link href='/'>回首頁</Link>
+                        </li>
                         <li className='ml-10 uppercase hover:border-b-4 ease-in duration-200 border-blue-800'>
                             <Link href='/intro/#main'>自我介紹</Link>
                         </li>

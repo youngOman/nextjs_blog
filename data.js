@@ -41,7 +41,7 @@ export const languages = [
     {
         Image : javascript,
         name: "JavaScript",
-        level: "85",
+        level: "93",
     },
     {
         Image : html,
@@ -91,7 +91,7 @@ export const languages = [
     {
         Image : unixshell,
         name: "Unix shell",
-        level: "60",
+        level: "78",
     },
 
 ];

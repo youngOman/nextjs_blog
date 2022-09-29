@@ -1,67 +1,25 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import moment from 'moment'
 import Link from 'next/link'
 import { CodeBlock,dracula } from "react-code-blocks";
+import { list } from 'postcss';
+import { RichText } from '@graphcms/rich-text-react-renderer';
+import Prism from 'prismjs';
+import 'prismjs/plugins/line-numbers/prism-line-numbers';
+import 'prismjs/themes/prism-tomorrow.css';
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 
 const PostDetail = ({post}) => {
 
-  const getContentFragment = (index, text, obj, type) => {
-
-    let modifiedText = text;
-
-    if (obj) {
-      if (obj.bold) {
-        modifiedText = (<b key={index}>{text}</b>);
-      }
-
-      if (obj.italic) {
-        modifiedText = (<em key={index}>{text}</em>);
-      }
-
-      if (obj.underline) {
-        modifiedText = (<u key={index}>{text}</u>);
-      }
-    }
-
-    switch (type) {
-      case 'heading-three':
-        return <h3 key={index} className="text-xl font-semibold mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>;
-      case 'paragraph':
-        return <p key={index} className="mb-8">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>;
-      case 'heading-four':
-        return <h4 key={index} className="text-md font-semibold mb-4">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h4>;
-      case 'code-block':
-        return <div>{
-          modifiedText.map((item,i)=> 
-          <React.Fragment key={i}>
-            <CodeBlock
-              text={item}
-              language="javascript"
-              showLineNumbers={true}
-              theme={dracula}
-            />
-          </React.Fragment>
-          )}
-        </div>
-      case 'image':
-        return (
-          <img
-            key={index}
-            alt={obj.title}
-            height={obj.height}
-            width={obj.width}
-            src={obj.src}
-          />
-        );
-      default:
-        return modifiedText;
-    }
-  };
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
 
   return (
     <div className='bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8'>
       <div className='relative overflow-hidden'>
-        <img 
+        <img
+          key={post.slug} 
           src={post.thumbnail.url}
           alt={post.title}
           className="object-top h-full w-full rounded-t-lg"
@@ -80,6 +38,7 @@ const PostDetail = ({post}) => {
         <Link href={`/intro/`}> 
           <div className='flex mb-4 lg:mb-0 w-full lg:w-auto mr-4 mt-2 cursor-pointer hover:scale-110 ease-in duration-300'>
             <img 
+              key={post.slug} 
               alt={post.author.name}
               src={post.author.photo.url}
               height='30px'
@@ -91,20 +50,30 @@ const PostDetail = ({post}) => {
         </Link>
         </div>
         <h1 className='mb-8 text-3xl font-semibold'>{post.title}</h1>
+
         {/*內文*/}
         {/* {console.log(post.content.raw)} */}
-        {post.content.raw.children.map((typeObj,index)=>{ //https://www.notion.so/Next-js-fdb2be60a14647079085d476d2e1fb7a
-          // console.log("tpyeobj"+typeObj);
-          const children = typeObj.children.map((item,itemIndex)=>{ // 取出每個type內的所有children
-            // console.log("Item:"+item)
-            return getContentFragment(itemIndex,item.text,item)
-          })
-          // console.log(children)
-          // console.log(typeObj)
+        <RichText 
+          content={post.content.raw.children}
+          renderers={{
+            code_block:({ children }) => 
+            <pre className="line-numbers language-javascript">
+              <code>{children}</code>
+            </pre>,
+            p: ({ children }) => <p className="mb-8">{children}</p>,
+            h1: ({ children }) => <h1 className="text-6xl font-semibold mb-4">{children}</h1>,
+            h2: ({ children }) => <h2 className="text-5xl font-semibold mb-4">{children}</h2>,
+            h3: ({ children }) => <h3 className="text-3xl font-semibold mb-4">{children}</h3>,
+            h4: ({ children }) => <h4 className="text-2xl font-semibold mb-4">{children}</h4>,
+            h5: ({ children }) => <h5 className="text-xl font-semibold mb-4">{children}</h5>,
+            h6: ({ children }) => <h6 className="text-lg font-semibold mb-4">{children}</h6>,
+            bold: ({ children }) => <strong>{children}</strong>,
+            italic: ({ children }) => <em>{children}</em>,
 
-          return getContentFragment(index,children,typeObj,typeObj.type);
-        })}
-
+            
+          }}  
+        >
+        </RichText>
       </div>
             {/*貼文上的分類標籤*/}
             <div className='text-right mt-8 mr-2'>
