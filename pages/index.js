@@ -58,9 +58,9 @@ export default function Home ({posts}) {
       );
     }
 
-    if (FilterfeaturedPost === "false") {
+    if (FilterfeaturedPost === "all") {
       CalculateDatas = CalculateDatas.filter(
-        (post) => FilterfeaturedPost === "false" && post.node.featuredPost == false
+        (post) => FilterfeaturedPost === "all" && post.node.featuredPost == false || post.node.featuredPost == true
       );
     }
     
@@ -104,9 +104,9 @@ export default function Home ({posts}) {
           }}
           className="w-1/6 md:w-auto  font-semibold bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500"
         >
-            <option defaultValue="" className='font-semibold' disabled>廢文過濾器</option>
+            <option defaultValuvae="" className='font-semibold' hidden>廢文過濾器</option>
             <option value="true" className='font-semibold'>只看正經的</option>
-            <option value="" className='font-semibold'>我全都看啦</option>
+            <option value="all" className='font-semibold'>我全都看啦</option>
         </select>
 
         <button type='submit' className="relative inset-y--1 left-8 items-center ">
