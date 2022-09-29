@@ -2,7 +2,6 @@
 import { PostCard,Categories,LatestPost,Pagination } from '../components'; // 不指定=index
 import { FeaturedPost } from '../sections';
 import React,{ useState,useEffect, useMemo } from 'react';
-import Head from 'next/head';
 import { useRouter } from 'next/router'
 import { AiOutlineSearch } from 'react-icons/ai'
 // API
@@ -58,9 +57,9 @@ export default function Home ({posts}) {
       );
     }
 
-    if (FilterfeaturedPost === "false") {
+    if (FilterfeaturedPost === "all") {
       CalculateDatas = CalculateDatas.filter(
-        (post) => FilterfeaturedPost === "false" && post.node.featuredPost == false
+        (post) => FilterfeaturedPost === "all" && post.node.featuredPost == false || post.node.featuredPost == true
       );
     }
     
@@ -90,10 +89,6 @@ export default function Home ({posts}) {
 
   return (
     <div className="container mx-auto px-10 mb-8">
-      <Head>
-        <title>Young's Blog</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       {/* 搜尋 */}
       <div className="md:relative flex justify-center mb-8 p-2 "> 
         <select 
@@ -104,9 +99,9 @@ export default function Home ({posts}) {
           }}
           className="w-1/6 md:w-auto  font-semibold bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500"
         >
-            <option defaultValue="" className='font-semibold'>廢文過濾器</option>
+            <option defaultValue="" className='font-semibold' hidden>廢文過濾器</option>
             <option value="true" className='font-semibold'>只看正經的</option>
-            <option value="false" className='font-semibold'>我全都看!</option>
+            <option value="all" className='font-semibold'>我全都看啦</option>
         </select>
 
         <button type='submit' className="relative inset-y--1 left-8 items-center ">

@@ -24,7 +24,7 @@ const index = () => {
         <Link href="/intro/#about"> 
           <span className='flex items-center p-2 dark:text-dark hover:bg-gray-100 border-b border-white'>關於我</span>
         </Link>
-        <Link href="/intro/#Skill"> 
+        <Link href="/intro/#skills"> 
           <span className='flex items-center p-2 dark:text-dark hover:bg-gray-100 border-b border-white'>技能樹</span>
         </Link>
         <Link href="/intro/#projects"> 

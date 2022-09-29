@@ -41,18 +41,19 @@ export default PostDetails
 
 
 // Fetch data at build time
-export async function getStaticProps({params}){ //params ??
+export async function getStaticProps({params}){
   
-  const data =  await getPostDetails(params.slug);  // 單個post
+  const data =  await getPostDetails(params.slug);  
   return {
-    props : { post : data } // post = 這頁的props
+    props : { post : data } // post = 單頁的props
   }
 
 }
+
 // Specify dynamic routes to pre-render pages based on data.
 // The HTML is generated at build time and will be reused on each request.
 export async function getStaticPaths(){ // 將所有可能的路徑都能被static render
-  const posts =  await getPosts(); // GraphQL API 全部的post
+  const posts =  await getPosts(); 
   return {
     paths: posts.map(({node:{slug}})=>({params:{slug}})), // 讓Next.js知道所有可能出現的路徑
     fallback: false,

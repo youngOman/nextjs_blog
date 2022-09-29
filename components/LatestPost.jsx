@@ -30,13 +30,13 @@ const LatestPost = ({ categories, slug }) => { // 從[slug].js傳進來的
         {/* 若slug存在 顯示related post 否則 recent post*/}
         {slug ? "你可能還會想看.." : "最新貼文"}
       </h3>
-      {recentPost.map((post) => (
-        <div key={post.title} className="flex items-center w-full mb-4 rounded-full transition duration-500 ease hover:-translate-x-5 hover:bg-cyan-400">
+      {recentPost.map((post,index) => (
+        <div key={index} className="flex items-center w-full mb-4 rounded-full transition duration-500 ease hover:-translate-x-5 hover:bg-cyan-400">
           {/* 縮圖 */}
           <div className="w-20 flex-none ">
-          <Link href={`/post/${post.slug}`} key={post.title}>
+          <Link href={`/post/${post.slug}`} key={index}>
             <img
-              key={post.id}
+              key={index}
               alt={post.title}
               src={post.thumbnail.url}
               className="h-14 w-32 align-middle rounded-full cursor-pointer"

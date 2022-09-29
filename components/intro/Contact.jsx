@@ -38,7 +38,7 @@ const Contact = () => {
                 <p className='uppercase pt-8'>Connect Info</p>
                 <div className='flex items-center justify-between py-4'>
                   <a
-                    href='https://www.youtube.com/watch?v=6aI4l2oWEH8&ab_channel=BassPunch'
+                    href='https://www.instagram.com/lo.young/'
                     target='_blank'
                     rel='noreferrer'
                   >
