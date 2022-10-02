@@ -1,6 +1,8 @@
 import React from 'react'
 import moment from 'moment'
 import Link from 'next/link'
+import Image from 'next/image';
+
 
 const PostCard = ({post}) => {
   // console.log(post.id);
@@ -8,10 +10,13 @@ const PostCard = ({post}) => {
     <div className='bg-white/50 hover:bg-white ease duration-500 drop-shadow-2xl rounded-lg p-0 lg:p-8 pb-6 mb-8'>
       {/* thumbnail圖片 */}
       <div className='relative overflow-hidden shadow-md pb-80 mb-6'> 
-        <img 
+        <Image 
           src={post.thumbnail.url}
           alt={post.title}
-          className='object-top absolute h-80 w-full object-cover shadow-lg rounded-t-lg lg:rounded-lg'
+          priority={true}
+          unoptimized
+          layout='fill'
+          className='object-top absolute object-cover shadow-lg rounded-t-lg lg:rounded-lg'
         />
       </div>
       {/* 標題 */}
@@ -55,7 +60,7 @@ const PostCard = ({post}) => {
         {post.categories.map((category,index)=>{ 
           return ( 
               <Link href={`/category/${category.slug}`} key={index} >  
-                <span className="relative hover:bg-sky-700 inline-block bg-slate-700 text-sm text-white font-semibold rounded-full px-5 py-2 mx-1 cursor-pointer">
+                <span className="relative hover:bg-sky-700 inline-block bg-slate-700 text-white font-semibold rounded-full cursor-pointer mx-1 my-1 py-2 md:px-5 px-2 md:text-sm text-xs">
                   {category.name}
                 </span>
               </Link>

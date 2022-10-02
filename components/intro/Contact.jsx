@@ -42,7 +42,7 @@ const Contact = () => {
                     target='_blank'
                     rel='noreferrer'
                   >
-                  <div className='rounded-full shadow-lg bg-inherit bg-blue p-6 cursor-pointer hover:scale-110 ease-in duration-300 hover:bg-white'>
+                  <div className='rounded-full shadow-lg bg-inherit bg-blue p-6 cursor-pointer hover:scale-110 ease-in duration-300 hover:bg-slate-400'>
                     <AiFillInstagram size={25}/>
                   </div>
                   </a>
@@ -51,7 +51,7 @@ const Contact = () => {
                     target='_blank'
                     rel='noreferrer'
                   >
-                    <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300 hover:bg-white'>
+                    <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300 hover:bg-slate-400'>
                       <FaGithub size={25}/>
                     </div>
                   </a>
@@ -60,7 +60,7 @@ const Contact = () => {
                     target='_blank'
                     rel='noreferrer'
                   >
-                  <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300 hover:bg-white'>
+                  <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300 hover:bg-slate-400'>
                     <AiOutlineMail size={25}  />
                   </div>
                   </a>
@@ -69,7 +69,7 @@ const Contact = () => {
                       target='_blank'
                       rel='noreferrer'
                     >
-                    <div className='rounded-full shadow-lg bg-inherit p-6 cursor-pointer hover:scale-110 ease-in duration-300 hover:bg-white'>
+                    <div className='rounded-full shadow-lg bg-inherit p-6 cursor-pointer hover:scale-110 ease-in duration-300 hover:bg-slate-400'>
                       <AiOutlineTwitter size={25}/>
                     </div>
                   </a>

@@ -18,6 +18,7 @@ import laravel from './public/assets/skills/laravel.png'
 import bootstrap from './public/assets/skills/bootstrap.png'
 import tailwind from './public/assets/skills/tailwind.png'
 import nextjs from './public/assets/skills/nextjs.png'
+import jquery from './public/assets/skills/jquery.png'
 {/*工具*/}
 import node from './public/assets/skills/node.png'
 import git from './public/assets/skills/git.png'
@@ -126,6 +127,11 @@ export const WebFrameWork = [
         Image : tailwind,
         name: "Tailwind",
         level: "90",
+    },
+    {
+        Image : jquery,
+        name: "JQuery",
+        level: "95",
     },
 ];
 

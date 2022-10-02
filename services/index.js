@@ -166,6 +166,7 @@ export const getCategoryPost = async (slug) =>{
                     slug
                     title
                     excerpt
+                    featuredPost
                     thumbnail {
                       url
                     }

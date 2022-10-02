@@ -4,6 +4,8 @@ import { FeaturedPost } from '../sections';
 import React,{ useState,useEffect, useMemo } from 'react';
 import { useRouter } from 'next/router'
 import { AiOutlineSearch } from 'react-icons/ai'
+import { HiOutlineChevronDoubleUp } from 'react-icons/hi';
+import Link from 'next/link';
 // API
 import { getPosts } from '../services'
 
@@ -19,7 +21,7 @@ export default function Home ({posts}) {
   // pagination
   const [pageNumber, setPageNumber] = useState(0);
   const [totalPosts,setTotalPosts] = useState(0);
-  const postsPerPage = 2;
+  const postsPerPage = 5;
 
   // console.log(...postTitles)
 
@@ -88,7 +90,7 @@ export default function Home ({posts}) {
   }
 
   return (
-    <div className="container mx-auto px-10 mb-8">
+    <div id="search" className="container mx-auto px-10 mb-8">
       {/* 搜尋 */}
       <div className="md:relative flex justify-center mb-8 p-2 "> 
         <select 
@@ -137,7 +139,17 @@ export default function Home ({posts}) {
         </div>
 
       </div>
+
       <Pagination pageCount={pageCount} changePage={changePage} />
+        <div className='flex justify-center py-12'>
+          <Link href='/#search'>
+            <a>
+              <div className='rounded-full shadow-lg bg-white shadow-gray-400 p-4 cursor-pointer hover:-translate-y-2 ease-in duration-300'>
+            <HiOutlineChevronDoubleUp className='text-[#5651e5]' size={30}/>
+              </div>
+            </a>
+          </Link>
+        </div>
     </div>
   )
 }
