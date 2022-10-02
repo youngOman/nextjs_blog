@@ -11,9 +11,6 @@ import 'prismjs/themes/prism-tomorrow.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 
 
-
-
-
 const PostDetail = ({post}) => {
 
   // const references = [
@@ -24,6 +21,7 @@ const PostDetail = ({post}) => {
   //   },
   // ];
   // console.log(node)
+
   useEffect(() => {
     Prism.highlightAll();
   }, []);
@@ -31,11 +29,16 @@ const PostDetail = ({post}) => {
   return (
     <div className='bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8'>
       <div className='relative overflow-hidden'>
-        <img
+        <Image
           key={post.slug} 
           src={post.thumbnail.url}
           alt={post.title}
-          className="object-top h-full w-full rounded-t-lg"
+          unoptimized
+          priority={true}
+          width={125}
+          height={75}
+          layout='responsive'
+          className="object-top rounded-lg"
         />
       </div>
       <div className='px-4 lg:px-0'>
@@ -50,12 +53,12 @@ const PostDetail = ({post}) => {
           {/*頭像*/}
         <Link href={`/intro/`}> 
           <div className='flex mb-4 lg:mb-0 w-full lg:w-auto mr-4 mt-2 cursor-pointer hover:scale-110 ease-in duration-300'>
-            <img 
-              key={post.slug} 
+            <Image 
               alt={post.author.name}
               src={post.author.photo.url}
-              height='30px'
-              width='30px'
+              unoptimized
+              width={30}
+              height={30}
               className='align-middle rounded-full'
             />
             <p className='inline align-middle text-gray-700 ml-2 font-medium mt-1'>{post.author.name}</p>
@@ -71,11 +74,13 @@ const PostDetail = ({post}) => {
           references={post.content.references}
           renderers={{
             code_block:({ children }) => 
-            <pre className="line-numbers language-javascript">
-              <code>{children}</code>
-            </pre>,
+            <div className='mb-8'>
+              <pre className="line-numbers language-javascript">
+                <code>{children}</code>
+              </pre>
+            </div>,
             code: ({ children }) => <span><code className="bg-gray-200 p-2 rounded-lg ">{children}</code></span>,
-            p: ({ children }) => <p className="mb-4">{children}</p>,
+            p: ({ children }) => <div className='mb-4'>{children}</div>,
             h1: ({ children }) => <h1 className="text-6xl font-semibold mb-4">{children}</h1>,
             h2: ({ children }) => <h2 className="text-5xl font-semibold mb-4">{children}</h2>,
             h3: ({ children }) => <h3 className="text-3xl font-semibold mb-4">{children}</h3>,
@@ -86,7 +91,7 @@ const PostDetail = ({post}) => {
             italic: ({ children }) => <em>{children}</em>,
             ul: ({ children }) => <ul className='list-disc m-3 px-6'>{children}</ul>,
             ol: ({ children }) => <ol className='list-decimal m-3 px-6'>{children}</ol>,
-            li: ({ children }) => <li className=' px-2 py-2 text-xl font-bold'>{children}</li>,
+            li: ({ children }) => <li className='px-1 py-1 text-lg'>{children}</li>,
             blockquote: ({ children }) => <blockquote className='p-2 italic border-l-4 bg-neutral-100 text-neutral-600 border-neutral-500 quote mb-4'>
               <p>{children}</p>
             </blockquote>,
@@ -122,10 +127,9 @@ const PostDetail = ({post}) => {
             embed: {
               Post : ({ title,slug,thumbnail,excerpt }) => {
                 return (
-                  <div className="bg-slate-300 flex items-center w-[80%] mb-4 rounded-lg cursor-pointer transition duration-300 ease hover:scale-105 hover:bg-emerald-400">
+                  <div className="bg-slate-300 flex items-center w-full mb-4 rounded-lg cursor-pointer transition duration-300 ease hover:scale-105 hover:bg-emerald-400">
                     <Link href={`/post/${slug}`}>
-                      <>
-                      <div className="w-20 flex-none "> 
+                      <div className="w-20 flex-none"> 
                           <Image 
                           src={thumbnail.url}
                           alt={title}
@@ -137,24 +141,23 @@ const PostDetail = ({post}) => {
                           className='align-middle rounded-full '
                           />
                       </div>
-                    
-                    <div className='flex-grow ml-4'>
-                      <p className='font-bold text-xl mb-1'>
-                      {title}
-                      </p>
-                      {excerpt}
-                      
-                    </div>
-                    </>
-                    </Link>
+                      </Link>
+                      <Link href={`/post/${slug}`}>
+                      <div className='flex-grow ml-4 p-4 truncate ... md:text-base text-xs'>
+                        <p className='font-bold text-xl mb-1'>
+                        {title}
+                        </p>
+                        {excerpt}    
+                      </div>
+                      </Link>
                   </div>
                 );
               },
             },
             Asset: { /* Embed的Image */
               image: ({url}) => 
-              <div className='mb-4'>
-                <Image src={url} width={500} height={300} className='align-middle rounded-lg'  unoptimized priority={true} />
+              <div className='mb-4 hover:scale-105 ease-in duration-300'>
+                <Image src={url} width={500} height={300} className='align-middle rounded-lg ' unoptimized priority={true} />
               </div>,
               // video: () => <div>custom VIDEO</div>,
               // 'video/mp4': () => {
@@ -172,7 +175,7 @@ const PostDetail = ({post}) => {
         {post.categories.map((category,index)=>{ 
           return ( 
               <Link href={`/category/${category.slug}`} key={index} >  
-                <span className="relative hover:bg-sky-700 inline-block bg-slate-700 text-sm text-white font-semibold rounded-full px-5 py-1 mx-1 cursor-pointer">
+                <span className="relative hover:bg-sky-700 inline-block bg-slate-700 text-sm text-white font-semibold rounded-full px-5 py-1 mx-1 my-1 cursor-pointer">
                   {category.name}
                 </span>
               </Link>

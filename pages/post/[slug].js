@@ -4,7 +4,8 @@ import { useRouter } from 'next/router'
 import { getPostDetails,getPosts } from '../../services'
 import { PostDetail,Categories,LatestPost,Author,Comments,CommentsForm } from '../../components'
 import { AdjacentPosts } from '../../sections';
-
+import { HiOutlineChevronDoubleUp } from 'react-icons/hi';
+import Link from 'next/link';
 const PostDetails = ({post}) => {
 
   // console.log(post)
@@ -22,6 +23,7 @@ const PostDetails = ({post}) => {
           <PostDetail post={post} />
           <Author author={post.author} />
           <AdjacentPosts slug={post.slug} createdAt={post.createdAt} />
+
           <CommentsForm />
           <Comments/>
         </div>
@@ -32,6 +34,15 @@ const PostDetails = ({post}) => {
             <Categories/>
           </div>
         </div>
+      </div>
+      <div className='flex justify-center py-12'>
+        <Link href='/#search'>
+          <a>
+            <div className='rounded-full shadow-lg bg-white shadow-gray-400 p-4 cursor-pointer hover:-translate-y-2 ease-in duration-300'>
+          <HiOutlineChevronDoubleUp className='text-[#5651e5]' size={30}/>
+            </div>
+          </a>
+        </Link>
       </div>
     </div>
   )
