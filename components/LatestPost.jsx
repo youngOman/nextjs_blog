@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
 import Link from "next/link";
+import Image from 'next/image';
 import { getRecentPosts, getSimilarPosts } from "../services";
 
 // 在首頁的話這兩個props為undefined
@@ -34,13 +35,18 @@ const LatestPost = ({ categories, slug }) => { // 從[slug].js傳進來的
         <div key={index} className="flex items-center w-full mb-4 rounded-full transition duration-500 ease hover:-translate-x-5 hover:bg-cyan-400">
           {/* 縮圖 */}
           <div className="w-20 flex-none ">
-          <Link href={`/post/${post.slug}`} key={index}>
-            <img
-              key={index}
-              alt={post.title}
-              src={post.thumbnail.url}
-              className="h-14 w-32 align-middle rounded-full cursor-pointer"
-            />
+            <Link href={`/post/${post.slug}`} key={index}>
+              <Image
+                key={index}
+                alt={post.title}
+                src={post.thumbnail.url}
+                priority={true}
+                unoptimized
+                width={70}
+                height={60}
+                layout='responsive'
+                className="align-middle rounded-full cursor-pointer"
+              />
             </Link>
           </div>
           {/* 時間 */}

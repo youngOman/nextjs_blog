@@ -64,6 +64,24 @@ export const getPostDetails = async(slug) =>{
                 }
                 content{
                     raw
+                    json
+                    references{
+                        __typename
+                        ...on Post{
+                            id
+                            title
+                            slug
+                            excerpt
+                            thumbnail{
+                                url
+                            }
+                        }
+                        ...on Asset{
+                            id
+                            url
+                            mimeType
+                        }
+                    }
                 }
             }
         }  

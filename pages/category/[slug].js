@@ -1,7 +1,6 @@
 import React,{useState,useMemo} from 'react'
-import { Categories,PostCard,Loading,Pagination } from '../../components';
+import { Categories,PostCard,Loading,Pagination,LatestPost } from '../../components';
 import { AiOutlineSearch } from 'react-icons/ai'
-
 import { useRouter } from 'next/router'
 // API 
 import { getCategoryPost,getCategories } from '../../services';
@@ -15,7 +14,6 @@ const CategoryRelatedPost = ({categoryPosts}) => {
     const [totalPosts,setTotalPosts] = useState(0);
     const postsPerPage = 2;
   
-
     const router = useRouter();
 
     if(router.isFallback){
@@ -94,6 +92,7 @@ const CategoryRelatedPost = ({categoryPosts}) => {
             </div>
             <div className="col-span-1 lg:col-span-4">
                 <div className="relative lg:sticky top-8">
+                <LatestPost />
                 <Categories />
                 </div>
             </div>

@@ -32,15 +32,15 @@ const About = () => {
 
 
   return (
-    <div id='about' className='w-full md:h-screen p-2 flex items-center py-16 font-serif text-xl'>
-      <div className='max-w-[1240px] m-auto md:grid grid-cols-3 gap-8'>
+    <div id='about' className='md:w-full md:h-screen p-2 flex items-center py-16 font-serif font-semibold text-xl'>
+      <div className=' md:max-w-[1240px] m-auto md:grid grid-cols-3 gap-8'>
         <div className='col-span-2'>
           <p className='uppercase mb-8 text-5xl font-bold tracking-widest text-[#5651e5]'>
             About ME
           </p>
           <h2 className='py-4 text-3xl'>I Guess I'm An Otaku</h2>
           <p className='py-2'>
-            我在各個領域都不算頂尖人才，只是個為了能稍微接近人才而努力的小工程師
+            我在各個領域都不算頂尖人才，只是個為了能稍微接近天才們還在努力的小工程師
           </p>
           <ReadMore sliceNums={36} str="終於怎樣?!">
             在文學院渡過了五年，從懵懵懂懂到不斷汲取知識直到畢業那刻終於!!!...認知到我的軟體工程師之路勢必會走的比別人還要艱辛許多....

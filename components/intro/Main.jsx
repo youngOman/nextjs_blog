@@ -6,9 +6,9 @@ import { FaGithub } from 'react-icons/fa';
 const Main = () => {
   return (
     <div id='home' className='w-full h-screen text-center'>
-      <div className='max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center font-serif text-xl'>
+      <div className='max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center font-serif font-semibold text-xl'>
         <div>
-          <p className='uppercase tracking-widest text-black text-3xl'>
+          <p className='uppercase tracking-widest text-black text-3xl '>
             做自己喜歡的事，不代表一直都能樂在其中
           </p>
           <h1 className='p-4 text-black'>
