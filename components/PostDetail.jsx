@@ -24,6 +24,7 @@ const PostDetail = ({post}) => {
   //   },
   // ];
   // console.log(node)
+
   useEffect(() => {
     Prism.highlightAll();
   }, []);
@@ -124,7 +125,6 @@ const PostDetail = ({post}) => {
                 return (
                   <div className="bg-slate-300 flex items-center w-[80%] mb-4 rounded-lg cursor-pointer transition duration-300 ease hover:scale-105 hover:bg-emerald-400">
                     <Link href={`/post/${slug}`}>
-                      <>
                       <div className="w-20 flex-none "> 
                           <Image 
                           src={thumbnail.url}
@@ -137,16 +137,15 @@ const PostDetail = ({post}) => {
                           className='align-middle rounded-full '
                           />
                       </div>
-                    
-                    <div className='flex-grow ml-4'>
-                      <p className='font-bold text-xl mb-1'>
-                      {title}
-                      </p>
-                      {excerpt}
-                      
-                    </div>
-                    </>
-                    </Link>
+                      </Link>
+                      <Link href={`/post/${slug}`}>
+                      <div className='flex-grow ml-4'>
+                        <p className='font-bold text-xl mb-1'>
+                        {title}
+                        </p>
+                        {excerpt}    
+                      </div>
+                      </Link>
                   </div>
                 );
               },
