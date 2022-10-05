@@ -93,9 +93,8 @@ export const getPostDetails = async(slug) =>{
 export const getRecentPosts = async() =>{
     const query = gql`
         query GetPostDetails {
-            posts(
-                orderBy: createdAt_DESC, first: 3
-                ){
+            posts(orderBy: createdAt_DESC, first: 4)
+            {
                 title
                 createdAt
                 slug
@@ -117,7 +116,7 @@ export const getSimilarPosts = async (categories,slug) => {
         query GetPostDetails($slug:String!,$categories:[String!]){
             posts(
                 where:{slug_not:$slug AND: {categories_some :{slug_in:$categories}}}
-                last: 3
+                first: 4
             ){
                 title
                 createdAt
@@ -149,7 +148,8 @@ export const getCategories = async() =>{
 export const getCategoryPost = async (slug) =>{
     const query = gql`
         query getCategoryPost($slug:String!){
-            postsConnection(where: {categories_some: {slug:$slug}}) {
+            postsConnection(where: {categories_some: {slug:$slug}}) 
+            {
                 edges {
                   cursor
                   node {
@@ -187,7 +187,7 @@ export const getCategoryPost = async (slug) =>{
 export const getFeaturedPost = async () =>{
     const query = gql`
         query GetFeaturedPost(){
-            posts(where: {featuredPost:true}) {
+            posts(where: {featuredPost:true},first:10) {
                 author{
                     name
                     photo{
@@ -208,14 +208,14 @@ export const getFeaturedPost = async () =>{
     return result.posts
 }
 
-
+// 取>=及<=所在這篇的日期及slug來當上篇下篇貼文
 export const getAdjacentPosts = async (createdAt, slug) => {
     const query = gql`
       query GetAdjacentPosts($createdAt: DateTime!,$slug:String!) {
         next:posts(
           first: 1
           orderBy: createdAt_ASC
-          where: {slug_not: $slug, AND: {createdAt_gte: $createdAt}}
+          where: {slug_not: $slug, AND: {createdAt_gte: $createdAt}} 
         ) {
           title
           thumbnail {
@@ -243,11 +243,3 @@ export const getAdjacentPosts = async (createdAt, slug) => {
   
     return { next: result.next[0], previous: result.previous[0] };
   };
-
-export const Searchquery = async (q) =>{
-
-    const query = gql`
-        query getSearchResults()
-    `
-
-}

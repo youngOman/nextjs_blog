@@ -1,14 +1,12 @@
 import React,{ useState,useEffect } from 'react'
 import { FeaturedPostCard } from '../components';
-
+import { getFeaturedPost } from '../services'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { getFeaturedPost } from '../services'
 
 
 const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you. 
       breakpoint: { max: 4000, min: 3000 },
       items: 5
     },
@@ -57,7 +55,7 @@ const CustomLeftArrow = ({ onClick, ...rest }) => {
 };
 
 const FeaturedPost = () => {
-
+    const [progress, setProgress] = useState(0)
     const [ featuredPost,setFeaturedPost ] = useState(null); 
     const [ dataload , setDataLoad ] = useState(false); // 預防無資料 map()出錯情況
 
@@ -69,21 +67,23 @@ const FeaturedPost = () => {
         });
     }, []);
     // console.log(featuredPost)
-
+    const value = 100;
   return (
     <div className='mb-8'>
         <Carousel 
           infinite={true} 
-          showDots={true} 
+          showDots={true}
           responsive={responsive} 
           itemClass="px-4" 
           customRightArrow={<CustomRightArrow />} 
           customLeftArrow={<CustomLeftArrow />} 
           autoPlay={true}
         >
-            {dataload ? featuredPost.map((post,index)=>(
-                <FeaturedPostCard post={post} key={index} />
-            )): <div>輪撥載入中....</div> }
+        {dataload ? featuredPost.map((post,index)=>(
+            <FeaturedPostCard post={post} key={index} />
+        )):
+        <div className='ml-8'>輪撥載入中........</div>
+        }
         </Carousel>
     </div>
   )

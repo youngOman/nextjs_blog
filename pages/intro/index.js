@@ -7,7 +7,6 @@ import Projects from '../../components/intro/Project'
 import Link from 'next/link'
 
 
-
 const index = () => {
   return (
     <div>
@@ -34,7 +33,6 @@ const index = () => {
           <span className='flex items-center p-2 dark:text-dark hover:bg-gray-100 border-b border-white'>聯絡我</span>
         </Link>
       </aside>
-
     </div>
   )
 }
