@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }) {
   return (    
 
     <Layout>
-       <div>
+      <div>
         <LoadingBar
           color='#5C08F9'
           height={6}
@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }) {
         />
       </div>
       <Head>
-        <title>Young's Blog</title>
+        <title>Young's Blog - 技術筆記</title>
         <meta property="og:title" content="My page title" key="title" />
         <link rel="icon" href="/favicon.ico" />
       </Head> 

@@ -41,7 +41,7 @@ const LatestPost = ({ categories, slug }) => { // 從[slug].js傳進來的
     <div ref={lazyRoot} className="bg-white shadow-lg rounded-lg p-8 mb-8">
       <h3 className="text-xl mb-8 font-semibold border-b border-violet-500 pb-4">
         {/* 若slug存在 顯示related post 否則 recent post*/}
-        {slug ? "你可能還會想看.." : "最新貼文"}
+        {slug ? "你可能還會想看.." : "剛出爐的貼文"}
       </h3>
       {recentPost.map((post,index) => (
         <div key={index} className="flex items-center w-full mb-4 rounded-full transition duration-500 ease hover:-translate-x-5 hover:bg-cyan-400">

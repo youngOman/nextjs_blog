@@ -6,6 +6,7 @@ import { PostDetail,Categories,LatestPost,Author,Comments,CommentsForm } from '.
 import { AdjacentPosts } from '../../sections';
 import { HiOutlineChevronDoubleUp } from 'react-icons/hi';
 import Link from 'next/link';
+
 const PostDetails = ({post}) => {
 
   // console.log(post)
@@ -31,6 +32,7 @@ const PostDetails = ({post}) => {
           <div className='relative lg:top-8'>
             <LatestPost slug={post.slug} categories={post.categories.map((category)=>category.slug)} />
             <Categories/>
+            {/* <TagsCloud/> */}
           </div>
         </div>
       </div>

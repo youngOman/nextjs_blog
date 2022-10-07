@@ -45,6 +45,9 @@ const Header = () => {
                         <li className='ml-10  uppercase hover:border-b-4 ease-in duration-200 border-blue-800'>
                             <Link href='/'>回首頁</Link>
                         </li>
+                        {/* <li className='ml-10  uppercase hover:border-b-4 ease-in duration-200 border-blue-800'>
+                            <Link href='/tags'>標籤雲</Link>
+                        </li> */}
                         <li className='ml-10 uppercase hover:border-b-4 ease-in duration-200 border-blue-800'>
                             <Link href='/intro/#main'>自我介紹</Link>
                         </li>
@@ -111,6 +114,11 @@ const Header = () => {
                                 回到文章列表
                                 </li>
                             </Link>
+                            {/* <Link href='/tags'>
+                                <li onClick={() => setShowNav(false)} className='py-3 border-b border-cyan-500 hover:bg-slate-300'>
+                                標籤雲
+                                </li>
+                            </Link> */}
                             <Link href='/intro/#main'>
                                 <li onClick={() => setShowNav(false)} className='py-3 border-b border-cyan-500 hover:bg-slate-300'>
                                 自我介紹

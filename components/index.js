@@ -11,6 +11,8 @@ export { default as Loading } from './Loading';
 export { default as CarouselPostCard } from './CarouselPostCard';
 export { default as Pagination } from './Pagination';
 export { default as AdjacentPostCard } from './AdjacentPostCard';
+// export { default as TagsCloud } from './TagsCloud';
+
 
 // export { default as Skillbar } from './intro/Skillbar';
 

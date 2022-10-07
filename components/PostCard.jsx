@@ -60,7 +60,7 @@ const PostCard = ({post}) => {
         {post.categories.map((category,index)=>{ 
           return ( 
               <Link href={`/category/${category.slug}`} key={index} >  
-                <span className="relative hover:bg-sky-700 inline-block bg-slate-700 text-white font-semibold rounded-full cursor-pointer mx-1 my-1 py-2 md:px-5 px-2 md:text-sm text-xs">
+                <span className="relative duration-500 hover:bg-sky-500 inline-block bg-slate-700 text-white font-semibold rounded-full cursor-pointer mx-1 my-1 py-2 md:px-5 px-2 md:text-sm text-xs">
                   {category.name}
                 </span>
               </Link>
