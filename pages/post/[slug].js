@@ -23,13 +23,12 @@ const PostDetails = ({post}) => {
           <PostDetail post={post} />
           <Author author={post.author} />
           <AdjacentPosts slug={post.slug} createdAt={post.createdAt} />
-
-          <CommentsForm />
-          <Comments/>
+          {/* <CommentsForm />
+          <Comments/> */}
         </div>
         {/*右側Widget*/}
         <div className='col-span-1 lg:col-span-4'>
-          <div className='relative lg:sticky top-8'>
+          <div className='relative lg:top-8'>
             <LatestPost slug={post.slug} categories={post.categories.map((category)=>category.slug)} />
             <Categories/>
           </div>

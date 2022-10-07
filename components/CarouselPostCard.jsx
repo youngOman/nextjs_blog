@@ -3,7 +3,7 @@ import moment from 'moment'
 import Image from 'next/image'
 import Link from 'next/link';
 
-const FeaturedPostCard = ({post}) => {
+const CarouselPostCard = ({post}) => {
 
     
   return (
@@ -35,4 +35,4 @@ const FeaturedPostCard = ({post}) => {
   )
 }
 
-export default FeaturedPostCard
+export default CarouselPostCard

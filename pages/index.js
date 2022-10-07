@@ -1,6 +1,6 @@
 // 首頁
 import { PostCard,Categories,LatestPost,Pagination } from '../components'; // 不指定=index
-import { FeaturedPost } from '../sections';
+import { CarouselPost } from '../sections';
 import React,{ useState,useEffect, useMemo } from 'react';
 import { useRouter } from 'next/router'
 import { AiOutlineSearch } from 'react-icons/ai'
@@ -122,9 +122,8 @@ export default function Home ({posts}) {
         {/* {SearchQuery} */}        
       </div>
 
-      <FeaturedPost />
+      <CarouselPost />
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-
         <div className='lg:col-span-8 col-span-1'>
           {postsData.length > 0 ? postsData.map((post,index)=>(
             <PostCard post={post.node} key={index} />
@@ -132,7 +131,7 @@ export default function Home ({posts}) {
         </div>
 
         <div className='lg:col-span-4 col-span-1' >
-          <div className='lg:sticky relative top-8'>{/*sticky=滾動頁面不會跟著滾*/}
+          <div className='lg:relative top-8'>{/*sticky=滾動頁面不會跟著滾*/}
               <LatestPost />
               <Categories />
           </div>

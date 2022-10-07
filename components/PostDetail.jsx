@@ -3,29 +3,27 @@ import moment from 'moment'
 import Link from 'next/link'
 import Image from 'next/image';
 import { RichText } from '@graphcms/rich-text-react-renderer';
-import Prism from 'prismjs';
-import 'prismjs/plugins/line-numbers/prism-line-numbers';
-import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
-// import 'prismjs/themes/prism-tomorrow.css';
+// code-block
+import { Pre, Line, LineNo, LineContent } from "../styles/codeblock";
+import Highlight, { defaultProps } from "prism-react-renderer";
+import theme from "prism-react-renderer/themes/nightOwl";
+// import dracula from 'prism-react-renderer/themes/dracula';
 
 const PostDetail = ({post}) => {
+  
   const [domLoaded, setDomLoaded] = useState(false);
   
   useEffect(() => {
-    
+
     setDomLoaded(true);
     
-    if(domLoaded){
-      Prism.highlightAll(); 
-    }
-  }, [post]); 
+  }, [post]);
     return (
     <>
       {domLoaded && (
       <div className='bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8'>
         <div className='relative overflow-hidden'>
           <Image
-            key={post.slug} 
             src={post.thumbnail.url}
             alt={post.title}
             unoptimized
@@ -105,15 +103,18 @@ const PostDetail = ({post}) => {
                   );
                 }
               },
-              // img: ({ src, altText, height, width }) => (
-              //   <Image
-              //     src={src}
-              //     alt={altText}
-              //     height={height}
-              //     width={width}
-              //     objectFit="cover"
-              //   />
-              // ),
+              img: ({ src, height, width }) => (
+                <div className='m-4'>
+                  <Image
+                    src={src}
+                    height={height}
+                    width={width}
+                    objectFit="cover"
+                    unoptimized
+                    loader={graphCmsLoader}
+                  />
+                </div>
+              ),
               link: {
                 Post: ({ slug,children }) => {
                   return <Link href={`/post/${slug}`}><p className='text-blue-700 mt-4 cursor-pointer underline underline-offset-4 italic'>{children}</p></Link>;
@@ -160,10 +161,27 @@ const PostDetail = ({post}) => {
                 // },
               },
               code: ({ children }) => <span><code className="bg-gray-200 p-2 rounded-lg">{children}</code></span>,
-              code_block: ({ children }) => 
-              <pre className='line-numbers language-javascript'>
-                <code className=''>{children}</code>
-              </pre>,
+              code_block: ({ children }) => {
+                const code = `${children.props.content[0].text}`.trim();
+                //  
+                return(
+                  <Highlight {...defaultProps} theme={theme} code={code} language="jsx">
+                    {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                      <Pre className={className} style={style}>
+                        {tokens.map((line, i) => (
+                          <Line key={i} {...getLineProps({ line, key: i })}>
+                            <LineNo>{i + 1}</LineNo>
+                            <LineContent>
+                              {line.map((token, key) => (
+                                <span key={key} {...getTokenProps({ token, key })} />
+                              ))}
+                            </LineContent>
+                          </Line>
+                        ))}
+                      </Pre>
+                    )}
+                  </Highlight>
+              )},
             }} 
           >
           </RichText>
@@ -187,3 +205,16 @@ const PostDetail = ({post}) => {
 }
 
 export default PostDetail
+
+function graphCmsLoader({src, width}) {
+  const match = /^(https?:\/\/media.graphcms.com)(?:\/[^\/]+)?\/([^\/]+)$/.exec(src);
+
+  if (!match) {
+    throw new Error('Invalid GraphCMS asset URL');
+  }
+
+  const [prefix, handle] = match.slice(1);
+  const resizedSrc = `${prefix}/resize=width:${width}/${handle}`;
+
+  return resizedSrc;
+}

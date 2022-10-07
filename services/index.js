@@ -182,7 +182,28 @@ export const getCategoryPost = async (slug) =>{
     const result =  await request(graphqlAPI,query,{ slug })
     return result.postsConnection.edges;
 }
-
+export const getCarouselPost = async () =>{
+    const query = gql`
+        query getCarouselPost(){
+            posts(where: {carouselShow:true}) {
+                author{
+                    name
+                    photo{
+                    url
+                    }
+                }
+                thumbnail{
+                    url
+                }
+                title
+                slug
+                createdAt
+            }
+        }
+    `
+    const result = await request(graphqlAPI,query)
+    return result.posts
+}
 
 export const getFeaturedPost = async () =>{
     const query = gql`
@@ -202,7 +223,6 @@ export const getFeaturedPost = async () =>{
                 createdAt
             }
         }
-    
     `
     const result =  await request(graphqlAPI,query)
     return result.posts

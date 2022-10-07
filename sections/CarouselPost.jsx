@@ -1,9 +1,8 @@
 import React,{ useState,useEffect } from 'react'
-import { FeaturedPostCard } from '../components';
-import { getFeaturedPost } from '../services'
+import { CarouselPostCard } from '../components';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-
+import { getCarouselPost } from '../services'
 
 const responsive = {
     superLargeDesktop: {
@@ -54,20 +53,18 @@ const CustomLeftArrow = ({ onClick, ...rest }) => {
     );
 };
 
-const FeaturedPost = () => {
-    const [progress, setProgress] = useState(0)
-    const [ featuredPost,setFeaturedPost ] = useState(null); 
+const CarouselPost = () => {
+    const [ carouselPost,setCarouselPost ] = useState(null); 
     const [ dataload , setDataLoad ] = useState(false); // 預防無資料 map()出錯情況
 
     useEffect(() => {
-        getFeaturedPost()
+      getCarouselPost()
         .then((response) => {
-            setFeaturedPost(response);
-            setDataLoad(true);
+          setCarouselPost(response);
+          setDataLoad(true);
         });
     }, []);
-    // console.log(featuredPost)
-    const value = 100;
+    // console.log(carouselPost)
   return (
     <div className='mb-8'>
         <Carousel 
@@ -79,8 +76,8 @@ const FeaturedPost = () => {
           customLeftArrow={<CustomLeftArrow />} 
           autoPlay={true}
         >
-        {dataload ? featuredPost.map((post,index)=>(
-            <FeaturedPostCard post={post} key={index} />
+        {dataload ? carouselPost.map((post,index)=>(
+            <CarouselPostCard post={post} key={index} />
         )):
         <div className='ml-8'>輪撥載入中........</div>
         }
@@ -89,4 +86,4 @@ const FeaturedPost = () => {
   )
 }
 
-export default FeaturedPost
+export default CarouselPost
