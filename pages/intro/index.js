@@ -30,7 +30,7 @@ const index = () => {
           <span className='flex items-center p-2 dark:text-dark hover:bg-gray-100 border-b border-white'>專案</span>
         </Link>
         <Link href="/intro/#contact"> 
-          <span className='flex items-center p-2 dark:text-dark hover:bg-gray-100 border-b border-white'>聯絡我</span>
+          <span className='flex items-center p-2 dark:text-dark hover:bg-gray-100 border-b border-white'>聯絡</span>
         </Link>
       </aside>
     </div>

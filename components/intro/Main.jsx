@@ -12,8 +12,8 @@ const Main = () => {
           <Typed
             className="uppercase tracking-widest text-blue-600 md:text-3xl text-2xl"
             strings={[
+              "此網站為功能實作範例網站，已停更",
               "做自己喜歡的事，不代表一直都能樂在其中",
-              "越是拼命投入，失敗時的反作用力越大",
               "明日小路我婆",
             ]}
             typeSpeed={120}
@@ -24,10 +24,10 @@ const Main = () => {
             Hi, 我叫{" "}
             <span className="text-sky-500/100 md:text-3xl text-2xl">
               {" "}
-              Young
+              明日小路男友
             </span>
           </h1>
-          <h1 className="py-2 text-black">是個微不足道的全端&系統工程師</h1>
+          <h1 className="py-2 text-black">微不足道的全端&系統工程師</h1>
           <span className="p-4 text-black sm:max-w-[70%] m-auto">
             學習的速度永遠跟不上資訊進步的速度，日復一日的鑽研新技術直到精通那刻又有新版本釋出...
           </span>

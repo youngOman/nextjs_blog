@@ -27,13 +27,12 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <h2 className="py-4 text-3xl	">Young Lo</h2>
+                <h2 className="py-4 text-3xl	">HEHE MaMan</h2>
                 <p className="font-bold">
                   A rookie in Full-Stack and System Dev
                 </p>
                 <p className="py-4">
-                  歡迎聊聊或一起技術交流，或是有啥好看的新番跟...也能推薦給我
-                  („ಡωಡ„)
+                "I was born at a very young age”
                 </p>
               </div>
               <div>
@@ -58,7 +57,7 @@ const Contact = () => {
                     </div>
                   </a>
                   <a
-                    href="https://imgur.com/uCQkEXo"
+                    href="https://www.youtube.com/watch?v=VKMw2it8dQYo"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -67,7 +66,7 @@ const Contact = () => {
                     </div>
                   </a>
                   <a
-                    href="https://twitter.com/khester824_/status/1572554606923902977"
+                    href="https://www.youtube.com/watch?v=VKMw2it8dQY"
                     target="_blank"
                     rel="noreferrer"
                   >

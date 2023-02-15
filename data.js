@@ -92,7 +92,7 @@ export const languages = [
     {
         Image : unixshell,
         name: "Unix shell",
-        level: "78",
+        level: "95",
     },
 
 ];
@@ -121,7 +121,7 @@ export const WebFrameWork = [
     {
         Image : bootstrap,
         name: "Bootstrap",
-        level: "65",
+        level: "85",
     },
     {
         Image : tailwind,
@@ -164,7 +164,7 @@ export const OS = [
     {
         Icon: FaLinux,
         name: "Linux",
-        level: "90",
+        level: "95",
     },
     {
         Icon: BsWindows,
@@ -174,6 +174,6 @@ export const OS = [
     {
         Icon: BsApple,
         name: "MacOS",
-        level: "60",
+        level: "100",
     },
 ];
